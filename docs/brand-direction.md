@@ -1,18 +1,13 @@
-# Selected colour direction: Connected Care
+# Approved colour direction: Proactive Wellness
 
-Selected by the owner on 14 October 2026. This is the visual direction; the app's working name remains Proactive Wellness.
+Updated by the owner on 14 October 2026 using the supplied palette and 60–30–10 guidance. The working name remains Proactive Wellness.
 
-| Use | Colour |
-| --- | --- |
-| Main feature panels | Navy `#102F48` |
-| Primary actions and brand accents | Teal `#087783` |
-| Highlight on dark panels | Aqua `#72E1CF` |
-| App canvas | Mist `#F3F7FA` |
-| Cards | White `#FFFFFF` |
-| Main text | Deep blue `#15344B` |
+| Role                            | Colour                                         | Application                                                             |
+| ------------------------------- | ---------------------------------------------- | ----------------------------------------------------------------------- |
+| Neutral base, approximately 60% | Warm white `#F8FAF5`, white `#FFFFFF`          | Canvas, cards, forms and readable space                                 |
+| Secondary, approximately 30%    | Yellow-green `#AFD472` and pale tint `#EEF5E3` | Welcome panels, appointments, selected navigation and supporting areas  |
+| Accents, approximately 10%      | Orange `#F37420`, dark Tyrian blue `#12354E`   | Primary actions, decorative accents, wordmark, text and smaller anchors |
 
-Use dark text on aqua and white text on navy/teal. Retain separate warning/error colours and text labels for clinical flags. Do not communicate clinical status through colour alone. Full accessibility acceptance testing with intended users remains part of the release process.
+The percentages guide visual balance, not exact pixel coverage. Use a darker navy text shade `#0D2E45` on orange for normal-text contrast; use the approved navy on green and white on navy. Avoid white body text on the bright colours. Preserve labelled warning/error states and never rely on colour alone for clinical status.
 
-The web app keeps a selector for the original sage theme, Calm Innovation and Bright Digital Care. Connected Care is the initial theme for new visitors. The Expo client uses the same navy/teal family.
-
-[Selected direction screenshot](colour-options/01-connected-care.jpg)
+Web defaults to **Approved · Wellness**, including the sign-in screen. Theme preferences use `pw-theme-v3`, so the prior stored Connected Care choice does not prevent adoption. Alternative themes remain available for comparison; mobile uses the approved palette. Full browser and physical-device accessibility acceptance remains outstanding.

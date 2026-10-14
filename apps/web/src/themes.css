@@ -223,3 +223,66 @@
     display: none;
   }
 }
+
+/* Approved palette: neutral canvas, leaf-green supporting areas and restrained
+   orange/navy accents. Exact proportions vary with viewport and content. */
+:root[data-theme='wellness'] {
+  --ink: #12354e;
+  --muted: #52616a;
+  --green: #12354e;
+  --line: #dfe5d5;
+  --bg: #f8faf5;
+  --sage: #eef5e3;
+  --peach: #fff0e5;
+  --hero: #12354e;
+  --accent: #afd472;
+  --hero-muted: #e8f0f4;
+  --art: #afd472;
+  --art-dark: #91b953;
+  --chart-secondary: #f37420;
+}
+:root[data-theme='wellness'] .button.primary {
+  background: #f37420;
+  color: #0d2e45;
+}
+:root[data-theme='wellness'] .button.primary:hover {
+  background: #afd472;
+  color: #12354e;
+}
+:root[data-theme='wellness'] .welcome-card,
+:root[data-theme='wellness'] .auth-story {
+  background: #afd472;
+  color: #12354e;
+}
+:root[data-theme='wellness'] .welcome-card h2 em,
+:root[data-theme='wellness'] .welcome-card p,
+:root[data-theme='wellness'] .auth-story p,
+:root[data-theme='wellness'] .auth-story small,
+:root[data-theme='wellness'] .auth-story h1 em {
+  color: #12354e;
+}
+:root[data-theme='wellness'] .welcome-card .button {
+  background: #12354e;
+  color: #ffffff;
+}
+:root[data-theme='wellness'] .welcome-card .button:hover {
+  background: #12354e;
+}
+:root[data-theme='wellness'] .art-heart {
+  color: #12354e;
+}
+:root[data-theme='wellness'] .art-chip,
+:root[data-theme='wellness'] .art-star {
+  color: #12354e;
+}
+:root[data-theme='wellness'] .art-leaf {
+  background: #f37420;
+}
+:root[data-theme='wellness'] .sidebar nav button.active,
+:root[data-theme='wellness'] .appointment-card {
+  background: #afd472;
+  color: #12354e;
+}
+:root[data-theme='wellness'] :is(button, a, input, select, textarea):focus-visible {
+  outline-color: #12354e;
+}
