@@ -1,3 +1,9 @@
+// Prices and intended benefits describe the commercial proposition, not service availability.
+export const PROTOTYPE_NOTICE =
+  'Review prototype · Fictional data only. No clinical care, prescriptions, deliveries, claims or real payments are provided. Do not enter real patient or financial information.';
+export const SUBSCRIPTION_NOTICE =
+  'Intended subscription offering: benefits below are planned for launch, subject to operational readiness. Selecting a plan or recording a test payment only changes the demonstration; it does not purchase or activate care.';
+
 export type Role = 'member' | 'family' | 'nurse' | 'doctor' | 'pharmacy' | 'driver' | 'admin';
 export type Tier = 'connect' | 'monitor' | 'concierge';
 export const TIERS = {
@@ -6,11 +12,11 @@ export const TIERS = {
     amount: 99500,
     description: 'Your everyday connection to care',
     benefits: [
-      'Unlimited virtual consults',
-      'E-script to door',
-      'Your lifelong Health Vault',
-      'Medication & reading reminders',
-      'A named care coordinator',
+      'Planned: Unlimited virtual consults',
+      'Planned: E-script to door',
+      'Planned: Your lifelong Health Vault',
+      'Planned: Medication & reading reminders',
+      'Planned: A named care coordinator',
     ],
   },
   monitor: {
@@ -18,10 +24,10 @@ export const TIERS = {
     amount: 170000,
     description: 'A closer eye on your wellbeing',
     benefits: [
-      'Everything in Connect',
-      'BP cuff & glucometer on loan',
-      'Daily nurse review of your vitals',
-      'Monthly nurse check-in',
+      'Planned: all Connect benefits',
+      'Planned: BP cuff & glucometer on loan',
+      'Planned: Daily nurse review of your vitals',
+      'Planned: Monthly nurse check-in',
     ],
   },
   concierge: {
@@ -29,11 +35,11 @@ export const TIERS = {
     amount: 265000,
     description: 'Thoughtful care, taken further',
     benefits: [
-      'Everything in Monitor',
-      'Priority same-day delivery',
-      'Updates for nominated family',
-      'Mobile-clinic access',
-      'Medical aid benefits management',
+      'Planned: all Monitor benefits',
+      'Planned: Priority same-day delivery',
+      'Planned: Updates for nominated family',
+      'Planned: Mobile-clinic access',
+      'Planned: Medical aid benefits management',
     ],
   },
 } as const;

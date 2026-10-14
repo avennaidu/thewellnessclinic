@@ -17,7 +17,13 @@ import {
   View,
 } from 'react-native';
 import * as SecureStore from 'expo-secure-store';
-import { TIERS, money, type Tier } from '../../../packages/core/domain';
+import {
+  TIERS,
+  PROTOTYPE_NOTICE,
+  SUBSCRIPTION_NOTICE,
+  money,
+  type Tier,
+} from '../../../packages/core/domain';
 type Data = Record<string, any>;
 const BASE = process.env.EXPO_PUBLIC_API_URL || 'http://localhost:4173';
 const pretty = (s: string) => s?.replaceAll('_', ' ').replace(/^./, (x) => x.toUpperCase());
@@ -203,11 +209,9 @@ export default function App() {
           </Pressable>
         )}
       </View>
-      {config?.demo && (
-        <View style={styles.demo}>
-          <Text style={styles.demoText}>LOCAL DEMO · Fictional records · No real payments</Text>
-        </View>
-      )}
+      <View style={styles.demo}>
+        <Text style={styles.demoText}>{PROTOTYPE_NOTICE}</Text>
+      </View>
       <ScrollView
         contentContainerStyle={[styles.content, large && { padding: 25 }]}
         refreshControl={
@@ -279,6 +283,7 @@ export default function App() {
                     />
                   </View>
                 </View>
+                <Hint>{SUBSCRIPTION_NOTICE}</Hint>
                 {Object.entries(TIERS).map(([k, t]) => (
                   <Action key={k} secondary={form.tier !== k} onPress={() => update('tier', k)}>
                     {t.name} · {money(t.amount)} / month
@@ -436,7 +441,10 @@ export default function App() {
             {screen === 'reading' && (
               <>
                 <Title>Add a reading</Title>
-                <Hint>Record what your device shows. Your care team makes clinical decisions.</Hint>
+                <Hint>
+                  Use fictional readings. Sample flags do not provide staffed monitoring or clinical
+                  care.
+                </Hint>
                 {['blood_pressure', 'glucose', 'heart_rate', 'weight', 'spo2', 'temperature'].map(
                   (t) => (
                     <Action key={t} secondary={form.type !== t} onPress={() => update('type', t)}>
@@ -493,7 +501,7 @@ export default function App() {
                   secondary={form.mode !== 'virtual'}
                   onPress={() => update('mode', 'virtual')}
                 >
-                  Virtual consult · included
+                  Planned virtual consult · sample request
                 </Action>
                 <Action secondary={form.mode !== 'home'} onPress={() => update('mode', 'home')}>
                   Home visit · R 1,850
@@ -540,7 +548,7 @@ export default function App() {
                     )
                   }
                 >
-                  Request appointment
+                  Save sample appointment request
                 </Action>
               </>
             )}
@@ -872,7 +880,8 @@ export default function App() {
               <>
                 <Text style={styles.heroTitle}>Your care. Your choices.</Text>
                 <Card>
-                  <Title>Your membership</Title>
+                  <Title>Your demonstration membership</Title>
+                  <Hint>{SUBSCRIPTION_NOTICE}</Hint>
                   <Text style={styles.reading}>{TIERS[data?.member?.tier as Tier]?.name}</Text>
                   <Hint>{money(data?.subscription?.amount || 0)} / month · incl. VAT</Hint>
                   {Object.entries(TIERS).map(([tier, t]) => (
