@@ -558,12 +558,27 @@ test('monthly billing applies the fixed pending price once and honours cancellat
   assert.equal(result.invoicesCreated, 0);
 });
 test('production startup is blocked before any demo or unconfigured integration can run', async () => {
-  const prior = process.env.NODE_ENV;
+  const prior = { ...process.env };
   process.env.NODE_ENV = 'production';
   try {
     await assert.rejects(createApp({ demo: true }), /Demo authentication/);
+    delete process.env.DATABASE_URL;
     await assert.rejects(createApp({ demo: false }), /PostgreSQL/);
+    process.env.HOSTING_REGION = 'af-south-1';
+    process.env.DATA_ENCRYPTION_KEY = 'test-only-not-a-real-key';
+    await assert.rejects(
+      createApp({ demo: false, databaseUrl: 'postgres://test:fake@localhost/test' }),
+      /Production release is gated/,
+    );
   } finally {
-    process.env.NODE_ENV = prior;
+    process.env = prior;
   }
+});
+
+test('local configuration exposes the qualified intended catalogue', async () => {
+  const result = await call('GET', '/api/config');
+  assert.equal(result.status, 200);
+  assert.deepEqual(result.data.tiers, TIERS);
+  for (const tier of Object.values(result.data.tiers) as any[])
+    for (const benefit of tier.benefits) assert.match(benefit, /^Planned: /);
 });

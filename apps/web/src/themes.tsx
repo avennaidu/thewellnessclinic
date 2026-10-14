@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './themes.css';
 
 export const palettes = [
+  { id: 'wellness', name: 'Approved · Wellness', colours: ['#F37420', '#AFD472', '#12354E'] },
   { id: 'sage', name: 'Original · Sage', colours: ['#2F5D48', '#E9EEE1', '#F6F7F2'] },
   { id: 'navy', name: '01 · Connected Care', colours: ['#102F48', '#087F8C', '#72E1CF'] },
   { id: 'indigo', name: '02 · Calm Innovation', colours: ['#37337A', '#B9AEED', '#9FE2D0'] },
@@ -11,12 +12,12 @@ export const palettes = [
 export function ThemePicker() {
   const [theme, setTheme] = useState(() => {
     const choice =
-      new URLSearchParams(location.search).get('theme') || localStorage.getItem('pw-theme-v2');
-    return palettes.some((p) => p.id === choice) ? choice! : 'navy';
+      new URLSearchParams(location.search).get('theme') || localStorage.getItem('pw-theme-v3');
+    return palettes.some((p) => p.id === choice) ? choice! : 'wellness';
   });
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
-    localStorage.setItem('pw-theme-v2', theme);
+    localStorage.setItem('pw-theme-v3', theme);
   }, [theme]);
   return (
     <div className="theme-picker">

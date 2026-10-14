@@ -17,7 +17,13 @@ import {
   View,
 } from 'react-native';
 import * as SecureStore from 'expo-secure-store';
-import { TIERS, money, type Tier } from '../../../packages/core/domain';
+import {
+  TIERS,
+  PROTOTYPE_NOTICE,
+  SUBSCRIPTION_NOTICE,
+  money,
+  type Tier,
+} from '../../../packages/core/domain';
 type Data = Record<string, any>;
 const BASE = process.env.EXPO_PUBLIC_API_URL || 'http://localhost:4173';
 const pretty = (s: string) => s?.replaceAll('_', ' ').replace(/^./, (x) => x.toUpperCase());
@@ -40,7 +46,7 @@ function Action({ children, onPress, secondary = false, disabled = false }: any)
       onPress={onPress}
       style={[styles.button, secondary && styles.secondary, disabled && { opacity: 0.5 }]}
     >
-      <Text style={[styles.buttonText, secondary && { color: '#087783' }]}>{children}</Text>
+      <Text style={[styles.buttonText, secondary && { color: '#12354e' }]}>{children}</Text>
     </Pressable>
   );
 }
@@ -53,7 +59,7 @@ function Input({ label, value, onChangeText, ...props }: any) {
         value={value}
         onChangeText={onChangeText}
         style={styles.input}
-        placeholderTextColor="#667d8b"
+        placeholderTextColor="#52616a"
         {...props}
       />
     </View>
@@ -180,7 +186,7 @@ export default function App() {
     return (
       <SafeAreaView style={styles.root}>
         <View style={styles.center}>
-          <ActivityIndicator color="#087783" />
+          <ActivityIndicator color="#12354e" />
           <Text style={styles.subtitle}>Getting your care space ready…</Text>
         </View>
       </SafeAreaView>
@@ -203,11 +209,9 @@ export default function App() {
           </Pressable>
         )}
       </View>
-      {config?.demo && (
-        <View style={styles.demo}>
-          <Text style={styles.demoText}>LOCAL DEMO · Fictional records · No real payments</Text>
-        </View>
-      )}
+      <View style={styles.demo}>
+        <Text style={styles.demoText}>{PROTOTYPE_NOTICE}</Text>
+      </View>
       <ScrollView
         contentContainerStyle={[styles.content, large && { padding: 25 }]}
         refreshControl={
@@ -279,6 +283,7 @@ export default function App() {
                     />
                   </View>
                 </View>
+                <Hint>{SUBSCRIPTION_NOTICE}</Hint>
                 {Object.entries(TIERS).map(([k, t]) => (
                   <Action key={k} secondary={form.tier !== k} onPress={() => update('tier', k)}>
                     {t.name} · {money(t.amount)} / month
@@ -293,7 +298,7 @@ export default function App() {
                     <Switch
                       value={!!form[k]}
                       onValueChange={(v) => update(k, v)}
-                      trackColor={{ true: '#087783' }}
+                      trackColor={{ true: '#12354e' }}
                     />
                   </View>
                 ))}
@@ -436,7 +441,10 @@ export default function App() {
             {screen === 'reading' && (
               <>
                 <Title>Add a reading</Title>
-                <Hint>Record what your device shows. Your care team makes clinical decisions.</Hint>
+                <Hint>
+                  Use fictional readings. Sample flags do not provide staffed monitoring or clinical
+                  care.
+                </Hint>
                 {['blood_pressure', 'glucose', 'heart_rate', 'weight', 'spo2', 'temperature'].map(
                   (t) => (
                     <Action key={t} secondary={form.type !== t} onPress={() => update('type', t)}>
@@ -493,7 +501,7 @@ export default function App() {
                   secondary={form.mode !== 'virtual'}
                   onPress={() => update('mode', 'virtual')}
                 >
-                  Virtual consult · included
+                  Planned virtual consult · sample request
                 </Action>
                 <Action secondary={form.mode !== 'home'} onPress={() => update('mode', 'home')}>
                   Home visit · R 1,850
@@ -540,7 +548,7 @@ export default function App() {
                     )
                   }
                 >
-                  Request appointment
+                  Save sample appointment request
                 </Action>
               </>
             )}
@@ -872,7 +880,8 @@ export default function App() {
               <>
                 <Text style={styles.heroTitle}>Your care. Your choices.</Text>
                 <Card>
-                  <Title>Your membership</Title>
+                  <Title>Your demonstration membership</Title>
+                  <Hint>{SUBSCRIPTION_NOTICE}</Hint>
                   <Text style={styles.reading}>{TIERS[data?.member?.tier as Tier]?.name}</Text>
                   <Hint>{money(data?.subscription?.amount || 0)} / month · incl. VAT</Hint>
                   {Object.entries(TIERS).map(([tier, t]) => (
@@ -988,8 +997,10 @@ export default function App() {
             )}
           </>
         )}
-        {busy && <ActivityIndicator color="#087783" style={{ margin: 16 }} />}
-        <Text style={styles.footer}>Not an emergency service. Care team weekdays 08:00–17:00.</Text>
+        {busy && <ActivityIndicator color="#12354e" style={{ margin: 16 }} />}
+        <Text style={styles.footer}>
+          Prototype only: no clinical response. Intended hours: weekdays 08:00–17:00.
+        </Text>
       </ScrollView>
       {user?.role === 'member' && !screen && (
         <View style={styles.tabs}>
@@ -1004,7 +1015,7 @@ export default function App() {
               }}
               style={[styles.tab, tab === t && styles.selectedTab]}
             >
-              <Text style={[styles.tabText, tab === t && { color: '#087783', fontWeight: '700' }]}>
+              <Text style={[styles.tabText, tab === t && { color: '#12354e', fontWeight: '700' }]}>
                 {t}
               </Text>
             </Pressable>
@@ -1015,12 +1026,12 @@ export default function App() {
   );
 }
 const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: '#f3f7fa' },
+  root: { flex: 1, backgroundColor: '#f8faf5' },
   header: {
     padding: 20,
     paddingTop: Platform.OS === 'android' ? 35 : 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#dce7ed',
+    borderBottomColor: '#dfe5d5',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -1028,25 +1039,25 @@ const styles = StyleSheet.create({
   brand: {
     fontFamily: Platform.OS === 'ios' ? 'Georgia' : 'serif',
     fontSize: 29,
-    color: '#15344b',
+    color: '#12354e',
   },
-  wordmark: { fontSize: 9, letterSpacing: 4, color: '#586e7f', marginTop: 2 },
-  refresh: { fontSize: 30, color: '#087783', padding: 10 },
-  demo: { paddingVertical: 8, paddingHorizontal: 20, backgroundColor: '#e0f2f3' },
-  demoText: { fontSize: 10, color: '#466777' },
+  wordmark: { fontSize: 9, letterSpacing: 4, color: '#52616a', marginTop: 2 },
+  refresh: { fontSize: 30, color: '#12354e', padding: 10 },
+  demo: { paddingVertical: 8, paddingHorizontal: 20, backgroundColor: '#eef5e3' },
+  demoText: { fontSize: 10, color: '#12354e' },
   content: { padding: 21, paddingBottom: 35 },
   heroTitle: {
     fontFamily: Platform.OS === 'ios' ? 'Georgia' : 'serif',
     fontSize: 37,
     lineHeight: 43,
-    color: '#15344b',
+    color: '#12354e',
     marginVertical: 13,
   },
   eyebrow: {
     fontSize: 11,
     fontWeight: '600',
     letterSpacing: 1.1,
-    color: '#586e7f',
+    color: '#52616a',
     marginTop: 6,
     marginBottom: 10,
     textTransform: 'uppercase',
@@ -1054,62 +1065,62 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: Platform.OS === 'ios' ? 'Georgia' : 'serif',
     fontSize: 24,
-    color: '#15344b',
+    color: '#12354e',
     marginBottom: 12,
     marginTop: 6,
   },
-  body: { fontSize: 16, color: '#486475', lineHeight: 25, marginBottom: 10 },
-  hint: { fontSize: 14, color: '#586e7f', lineHeight: 22, marginBottom: 18 },
+  body: { fontSize: 16, color: '#52616a', lineHeight: 25, marginBottom: 10 },
+  hint: { fontSize: 14, color: '#52616a', lineHeight: 22, marginBottom: 18 },
   card: {
     backgroundColor: '#fff',
     borderRadius: 15,
     borderWidth: 1,
-    borderColor: '#dce7ed',
+    borderColor: '#dfe5d5',
     padding: 21,
     marginVertical: 9,
   },
   button: {
     minHeight: 49,
     padding: 15,
-    backgroundColor: '#087783',
+    backgroundColor: '#f37420',
     borderRadius: 9,
     marginVertical: 7,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  buttonText: { fontSize: 15, fontWeight: '600', color: '#ffffff', textAlign: 'center' },
-  secondary: { backgroundColor: '#e0f2f3', borderWidth: 1, borderColor: '#c8e3e8' },
+  buttonText: { fontSize: 15, fontWeight: '600', color: '#0d2e45', textAlign: 'center' },
+  secondary: { backgroundColor: '#eef5e3', borderWidth: 1, borderColor: '#dfe5d5' },
   field: { marginVertical: 9 },
-  label: { fontSize: 13, color: '#486475', marginBottom: 9 },
+  label: { fontSize: 13, color: '#52616a', marginBottom: 9 },
   input: {
     fontSize: 17,
-    color: '#15344b',
+    color: '#12354e',
     padding: 14,
     minHeight: 50,
     borderWidth: 1,
-    borderColor: '#dce7ed',
+    borderColor: '#dfe5d5',
     borderRadius: 9,
     backgroundColor: '#ffffff',
   },
   switchRow: { flexDirection: 'row', alignItems: 'center', gap: 12, marginVertical: 13 },
-  switchText: { flex: 1, fontSize: 14, lineHeight: 22, color: '#586e7f' },
+  switchText: { flex: 1, fontSize: 14, lineHeight: 22, color: '#52616a' },
   twoColumns: { flexDirection: 'row', gap: 12 },
   error: { padding: 16, borderRadius: 9, backgroundColor: '#fceee6', marginVertical: 10 },
   errorText: { fontSize: 14, color: '#925f42', lineHeight: 21 },
-  hero: { backgroundColor: '#102f48', padding: 25, borderRadius: 18, marginVertical: 20 },
+  hero: { backgroundColor: '#afd472', padding: 25, borderRadius: 18, marginVertical: 20 },
   heroHeading: {
     fontFamily: Platform.OS === 'ios' ? 'Georgia' : 'serif',
     fontSize: 31,
     lineHeight: 38,
-    color: '#ffffff',
+    color: '#12354e',
     marginBottom: 17,
   },
-  heroCopy: { fontSize: 14, lineHeight: 23, color: '#c4dce7', marginBottom: 15 },
-  reading: { fontSize: 33, color: '#15344b', fontWeight: '500', marginVertical: 6 },
-  units: { fontSize: 14, color: '#586e7f' },
+  heroCopy: { fontSize: 14, lineHeight: 23, color: '#12354e', marginBottom: 15 },
+  reading: { fontSize: 33, color: '#12354e', fontWeight: '500', marginVertical: 6 },
+  units: { fontSize: 14, color: '#52616a' },
   pill: {
-    color: '#087783',
-    backgroundColor: '#e0f2f3',
+    color: '#12354e',
+    backgroundColor: '#eef5e3',
     fontSize: 12,
     padding: 8,
     alignSelf: 'flex-start',
@@ -1117,26 +1128,26 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   note: {
-    backgroundColor: '#e0f2f3',
-    color: '#486475',
+    backgroundColor: '#eef5e3',
+    color: '#52616a',
     padding: 15,
     borderRadius: 8,
     fontSize: 14,
     lineHeight: 22,
   },
-  footer: { fontSize: 10, lineHeight: 17, textAlign: 'center', color: '#586e7f', marginTop: 25 },
+  footer: { fontSize: 10, lineHeight: 17, textAlign: 'center', color: '#52616a', marginTop: 25 },
   tabs: {
     flexDirection: 'row',
     padding: 9,
     paddingBottom: 16,
     borderTopWidth: 1,
-    borderTopColor: '#dce7ed',
+    borderTopColor: '#dfe5d5',
     backgroundColor: '#fff',
   },
   tab: { flex: 1, paddingVertical: 16, alignItems: 'center', borderRadius: 8 },
-  selectedTab: { backgroundColor: '#e0f2f3' },
-  tabText: { fontSize: 11, color: '#586e7f' },
-  back: { fontSize: 14, color: '#087783', paddingVertical: 15 },
+  selectedTab: { backgroundColor: '#eef5e3' },
+  tabText: { fontSize: 11, color: '#52616a' },
+  back: { fontSize: 14, color: '#12354e', paddingVertical: 15 },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-  subtitle: { marginTop: 20, color: '#586e7f' },
+  subtitle: { marginTop: 20, color: '#52616a' },
 });

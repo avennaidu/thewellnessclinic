@@ -38,3 +38,5 @@ Choose **Colour direction** to compare the original sage design and three altern
 This is a reviewable prototype, not a live clinical service. Production startup deliberately fails until provider and operational release requirements are satisfied. See [release requirements](docs/RELEASE.md). The private static review does not satisfy the specification's South African hosting requirement for real patient data.
 
 The local record store supports SQLite and a PostgreSQL adapter, with encrypted payloads and ownership indexes. PostgreSQL requires integration/performance testing before production. `apps/api/migrations/001_domain.sql` is the generated domain schema reference; the current migrator creates the schema and audit triggers on startup.
+
+See [service readiness and acceptance criteria](docs/SERVICE_READINESS.md) for the benefit-by-benefit review, differences between local and shared demonstrations, and production acceptance evidence. Catalogue benefits are planned commercial services, not current operating commitments.

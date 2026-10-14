@@ -26,3 +26,7 @@ Before any real patient launch:
 - The review site's hosting region is not established as South African. It contains fictional fixtures only, never local user records.
 
 The `NODE_ENV=production` startup gate intentionally remains closed. Do not remove it until these requirements are implemented and validated.
+
+## Advertised benefits and review acceptance
+
+The catalogue retains intended subscription benefits and approved prices, with every benefit marked Planned. Demo selection, invoice payment, clinical records and delivery states do not establish availability of care. See [service readiness and acceptance criteria](SERVICE_READINESS.md) for the implementation/simulation/planned matrix and separate demo and production gates. This document does not authorize production startup or real patient data.

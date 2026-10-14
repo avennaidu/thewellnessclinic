@@ -16,14 +16,14 @@ const row = (data: Data) => ({
 });
 const unsupported = () => {
   throw new Error(
-    'This action is available in the locally installed app. This shared sample does not send messages, accept documents or create real accounts.',
+    'This action is unsupported in the shared sample. The local prototype supports additional fictional-data workflows only. Neither version provides real care, messages or payments.',
   );
 };
 
 // Private review only: all records are fictional and all changes live in tab memory.
 // This is not authentication. Sites provides the private access boundary.
 export async function previewApi(path: string, method = 'GET', body: Data = {}) {
-  if (path === '/config') return { ...fixture.config, sharedPreview: true };
+  if (path === '/config') return { ...fixture.config, tiers: TIERS, sharedPreview: true };
   if (path === '/demo/login') {
     if (!roles[body.role]) throw new Error('Choose a sample role.');
     role = body.role;

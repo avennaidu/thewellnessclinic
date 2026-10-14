@@ -54,6 +54,8 @@ import {
 } from 'lucide-react';
 import {
   TIERS,
+  PROTOTYPE_NOTICE,
+  SUBSCRIPTION_NOTICE,
   HOME_VISIT_FEE,
   money,
   type Role,
@@ -349,6 +351,7 @@ function Auth({ config, onLogin }: { config: Data; onLogin: () => Promise<void> 
       <main className="auth-main">
         <div className="auth-card">
           <span className="eyebrow">WELCOME TO PROACTIVE WELLNESS</span>
+          <Notice>{PROTOTYPE_NOTICE}</Notice>
           <h2>
             {mode === 'signup'
               ? 'Let’s get to know you.'
@@ -360,17 +363,17 @@ function Auth({ config, onLogin }: { config: Data; onLogin: () => Promise<void> 
           </h2>
           <p>
             {mode === 'signup'
-              ? 'Create your account and start your lifelong Health Vault.'
+              ? 'Create a fictional test account to explore the Health Vault.'
               : mode === 'verify'
                 ? 'Enter your six-digit verification code.'
                 : mode === 'waitlist'
                   ? 'We’ll record your interest in care beyond our current service area.'
-                  : 'Sign in to connect with your care team.'}
+                  : 'Sign in to explore the care workflow demonstration.'}
           </p>
           {mode === 'login' && (
             <>
               <Form
-                label="Send verification code"
+                label="Generate local test code"
                 onSubmit={async (f) => {
                   const c = await api('/auth/request-otp', 'POST', {
                     email: f.get('email'),
@@ -399,7 +402,7 @@ function Auth({ config, onLogin }: { config: Data; onLogin: () => Promise<void> 
               <div className="auth-links">
                 New to Proactive Wellness?{' '}
                 <button onClick={() => setMode('signup')}>
-                  Join the care community <ArrowUpRight size={14} />
+                  Create a test account <ArrowUpRight size={14} />
                 </button>
               </div>
               {config.demo && (
@@ -419,7 +422,7 @@ function Auth({ config, onLogin }: { config: Data; onLogin: () => Promise<void> 
           )}
           {mode === 'signup' && (
             <Form
-              label="Create my account"
+              label="Create test account"
               onSubmit={async (f) => {
                 const c = await api('/auth/register', 'POST', {
                   name: f.get('name'),
@@ -508,7 +511,8 @@ function Auth({ config, onLogin }: { config: Data; onLogin: () => Promise<void> 
                   </Field>
                 </div>
               </div>
-              <Field label="Your membership">
+              <Notice>{SUBSCRIPTION_NOTICE}</Notice>
+              <Field label="Your demonstration membership">
                 <select name="tier" defaultValue="monitor">
                   {Object.entries(TIERS).map(([k, v]) => (
                     <option key={k} value={k}>
@@ -898,7 +902,7 @@ function App() {
           <div className="demo-bar">
             <span>
               <span className="demo-dot" /> Demo workspace{' '}
-              <span className="demo-detail">· Fictional records · Test payments</span>
+              <span className="demo-detail">· Fictional records · Simulated services</span>
             </span>
             <label>
               Preview as{' '}
@@ -953,6 +957,9 @@ function App() {
             </label>
           </div>
         )}
+        <div className="shared-review-note" role="note">
+          {PROTOTYPE_NOTICE}
+        </div>
         <ThemePicker />
         {config.sharedPreview && (
           <div className="shared-review-note">
@@ -1089,7 +1096,7 @@ function App() {
                   `/members/${mid}/consults`,
                   body,
                   'POST',
-                  'Request saved. Your care team will confirm a time.',
+                  'Sample request saved. No clinician has been contacted.',
                 )
               }
             />
@@ -1207,7 +1214,7 @@ function App() {
           )}
           {modal.kind === 'plan' && (
             <Form
-              label="Save membership choice"
+              label="Save demo membership choice"
               onSubmit={(f) =>
                 act(
                   `/members/${mid}/membership`,
@@ -1219,6 +1226,7 @@ function App() {
                 )
               }
             >
+              <Notice>{SUBSCRIPTION_NOTICE}</Notice>
               <Field label="Membership">
                 <select name="tier" defaultValue={modal.tier || data?.member.tier}>
                   {Object.entries(TIERS).map(([k, v]) => (
@@ -1387,7 +1395,7 @@ function App() {
                   `/consults/${modal.item.id}/accept`,
                   { scheduledAt: new Date(String(f.get('scheduledAt'))).toISOString() },
                   'POST',
-                  'Appointment scheduled.',
+                  'Sample appointment scheduled. No call has been arranged.',
                 )
               }
             >
@@ -1396,8 +1404,8 @@ function App() {
                 <input name="scheduledAt" type="datetime-local" required />
               </Field>
               <Notice>
-                Pilot consults use WhatsApp video. The care team arranges the call; no automatic
-                message is sent in this demo.
+                This schedules a fictional appointment only. Live video and messaging are not
+                connected; no care team is contacted.
               </Notice>
             </Form>
           )}
@@ -1732,8 +1740,8 @@ function ReadingForm({ onSubmit }: any) {
         )}
       </div>
       <Notice>
-        Your care team reviews readings using your personal care protocol. The app does not diagnose
-        or suggest treatment.
+        Sample thresholds demonstrate flags and review queues. No staffed monitoring or response is
+        provided. The app does not diagnose or suggest treatment.
       </Notice>
     </Form>
   );
@@ -1742,7 +1750,7 @@ function ConsultForm({ onSubmit, home = false }: any) {
   const [mode, setMode] = useState(home ? 'home' : 'virtual');
   return (
     <Form
-      label={mode === 'home' ? 'Request home visit' : 'Request consult'}
+      label={mode === 'home' ? 'Save sample home-visit request' : 'Save sample consult request'}
       onSubmit={(f) =>
         onSubmit({
           reason: f.get('reason'),
@@ -1798,12 +1806,13 @@ function ConsultForm({ onSubmit, home = false }: any) {
         </label>
       ) : (
         <p className="inline-note">
-          <CheckCircle2 size={16} /> Virtual consults are included in your membership.
+          <CheckCircle2 size={16} /> Planned: virtual consults included at launch. This is a sample
+          request.
         </p>
       )}
       <Notice>
-        Requests are reviewed weekdays, 08:00–17:00. This is not an emergency service. For
-        emergencies, call 112 or 10177.
+        Intended service hours: weekdays, 08:00–17:00. Demo requests receive no clinical response.
+        For emergencies, call 112 or 10177.
       </Notice>
     </Form>
   );
@@ -2011,7 +2020,7 @@ function Overview({ data, go, open, act, notify }: any) {
                   </span>
                 </div>
                 <h3>{next.reason}</h3>
-                <p>{date(next.scheduledAt, true)} · WhatsApp video</p>
+                <p>{date(next.scheduledAt, true)} · Simulated video appointment</p>
                 <div className="appointment-doctor">
                   <Avatar small name={next.doctorName} />
                   <span>{next.doctorName}</span>
@@ -2041,8 +2050,8 @@ function Overview({ data, go, open, act, notify }: any) {
             <h3>Your care, to your door.</h3>
             <p>
               {order
-                ? 'Your monthly prescription is making its way through your care team.'
-                : 'Your prescription deliveries will appear here.'}
+                ? 'Fictional order progress demonstrates the intended pharmacy workflow.'
+                : 'Sample prescription deliveries will appear here.'}
             </p>
             {order && (
               <>
@@ -2071,7 +2080,7 @@ function Overview({ data, go, open, act, notify }: any) {
               <p>
                 {data.subscription?.status === 'active'
                   ? 'A little peace of mind, every month.'
-                  : 'Complete your first payment to activate.'}
+                  : 'Record a test payment to activate the demo only.'}
               </p>
             </div>
             <button aria-label="View membership" onClick={() => go('membership')}>
@@ -2475,10 +2484,11 @@ function Care({ data, open }: any) {
           </span>
           <h2>A familiar face, wherever you are.</h2>
           <p>
-            Virtual consults with your doctor, over WhatsApp video. Included in every membership.
+            Planned: unlimited virtual consultations in every membership. This demo records requests
+            only; no live consultation is provided.
           </p>
           <button className="text-link" onClick={() => open('consult')}>
-            Request virtual consult <ArrowUpRight size={16} />
+            Simulate consult request <ArrowUpRight size={16} />
           </button>
         </div>
         <div className="panel">
@@ -2487,10 +2497,11 @@ function Care({ data, open }: any) {
           </span>
           <h2>Good care, in the comfort of home.</h2>
           <p>
-            Home visits for all members. R 1,850 per visit, charged after your visit is completed.
+            Planned: home visits at R 1,850 per completed visit on every tier. Demo requests do not
+            book a real visit or collect funds.
           </p>
           <button className="text-link" onClick={() => open('consult', { home: true })}>
-            Request home visit <ArrowUpRight size={16} />
+            Simulate home-visit request <ArrowUpRight size={16} />
           </button>
         </div>
       </div>
@@ -2535,7 +2546,7 @@ function Care({ data, open }: any) {
                 )}
                 {c.status === 'scheduled' && (
                   <p className="small-text muted">
-                    Your team will arrange the WhatsApp call. Be available at your scheduled time.
+                    Fictional appointment only. No WhatsApp call or live consultation is arranged.
                   </p>
                 )}
               </div>
@@ -2673,7 +2684,7 @@ function Deliveries({ data }: any) {
       <SectionTitle
         eyebrow="PRESCRIPTION TO DOOR"
         title="Your medication, delivered."
-        description="Follow every step, from your care team to your doorstep."
+        description="Simulated delivery tracking. No prescription is issued, dispensed or dispatched."
       />
       <div className="delivery-info">
         <span>
@@ -2731,7 +2742,7 @@ function Membership({ data, open, act, notify }: any) {
       <SectionTitle
         eyebrow="CARE THAT FITS YOUR LIFE"
         title="Your membership"
-        description="Personal care. Clear pricing. A little more peace of mind."
+        description="Explore the intended commercial offering and demonstration billing."
       />
       {s && (
         <div className="membership-current">
@@ -2741,7 +2752,7 @@ function Membership({ data, open, act, notify }: any) {
             <p>
               {s.nextBillingAt
                 ? `Next billing date: ${date(s.nextBillingAt)}`
-                : 'Your first payment activates your membership.'}
+                : 'A test payment activates only the demo membership.'}
               {s.pendingTier &&
                 ` · ${TIERS[s.pendingTier as Tier].name} starts at your next billing date.`}
             </p>
@@ -2753,12 +2764,13 @@ function Membership({ data, open, act, notify }: any) {
           </div>
         </div>
       )}
+      <Notice>{SUBSCRIPTION_NOTICE}</Notice>
       <div className="pricing-grid">
         {Object.entries(TIERS).map(([k, t]) => (
           <article key={k} className={`pricing-card ${k === 'monitor' ? 'featured' : ''}`}>
             <div className="section-line">
               <h3>{t.name}</h3>
-              {k === data.member.tier && <Badge>YOUR PLAN</Badge>}
+              {k === data.member.tier && <Badge>DEMO PLAN</Badge>}
             </div>
             <p>{t.description}</p>
             <div className="price">
@@ -2777,7 +2789,7 @@ function Membership({ data, open, act, notify }: any) {
               kind={k === 'monitor' ? 'primary' : 'secondary'}
               onClick={() => open('plan', { tier: k })}
             >
-              {k === data.member.tier ? 'Manage plan' : `Choose ${t.name}`}
+              {k === data.member.tier ? 'Manage demo plan' : `Preview ${t.name}`}
               <ArrowRight size={16} />
             </Button>
           </article>
@@ -2789,8 +2801,9 @@ function Membership({ data, open, act, notify }: any) {
           <strong>Home visits: R 1,850</strong> per completed visit, on every tier.
         </span>
         <p>
-          Medication, pathology, radiology and specialist fees are separate or claimed from medical
-          aid. Monthly in advance. Cancel on 20 business days’ notice. All prices include 15% VAT.
+          Intended terms: medication, pathology, radiology and specialist fees are separate or may
+          be claimed from medical aid, subject to scheme approval. Claims are not processed here.
+          Monthly in advance. Cancel on 20 business days’ notice. All prices include 15% VAT.
         </p>
       </div>
       <div className="section-line">
@@ -3334,7 +3347,7 @@ function StaffView({
                 )}
                 {user.role === 'driver' && o.status === 'collected' && (
                   <Button onClick={() => open('delivery', { item: o })}>
-                    Confirm delivery <CheckCheck size={16} />
+                    Record demo delivery <CheckCheck size={16} />
                   </Button>
                 )}
               </div>
