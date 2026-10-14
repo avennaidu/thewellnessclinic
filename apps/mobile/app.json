@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "Proactive Wellness",
+    "slug": "proactive-wellness",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "scheme": "proactivewellness",
+    "ios": { "supportsTablet": true, "bundleIdentifier": "za.co.proactivewellness.app" },
+    "android": { "package": "za.co.proactivewellness.app" },
+    "plugins": ["expo-secure-store"]
+  }
+}

@@ -1,0 +1,3765 @@
+{
+  "fictionalOnly": true,
+  "generatedAt": "2026-10-14T15:02:39.875Z",
+  "config": {
+    "demo": true,
+    "tiers": {
+      "connect": {
+        "name": "Connect",
+        "amount": 99500,
+        "description": "Your everyday connection to care",
+        "benefits": [
+          "Unlimited virtual consults",
+          "E-script to door",
+          "Your lifelong Health Vault",
+          "Medication & reading reminders",
+          "A named care coordinator"
+        ]
+      },
+      "monitor": {
+        "name": "Monitor",
+        "amount": 170000,
+        "description": "A closer eye on your wellbeing",
+        "benefits": [
+          "Everything in Connect",
+          "BP cuff & glucometer on loan",
+          "Daily nurse review of your vitals",
+          "Monthly nurse check-in"
+        ]
+      },
+      "concierge": {
+        "name": "Concierge",
+        "amount": 265000,
+        "description": "Thoughtful care, taken further",
+        "benefits": [
+          "Everything in Monitor",
+          "Priority same-day delivery",
+          "Updates for nominated family",
+          "Mobile-clinic access",
+          "Medical aid benefits management"
+        ]
+      }
+    },
+    "homeVisitFee": 185000,
+    "consentVersion": "2026-10-v1",
+    "consents": {
+      "care": "I consent to Proactive Wellness collecting and using my health information to coordinate my care and keep my Health Vault.",
+      "communications": "I agree to receive care reminders and service updates. Notifications will not include health details.",
+      "delivery": "I consent to sharing the minimum prescription and delivery information with my pharmacy and delivery team when needed."
+    },
+    "serviceHours": "Monday–Friday, 08:00–17:00",
+    "deliveryRadiusKm": 20,
+    "informationOfficer": null
+  },
+  "roles": {
+    "member": {
+      "user": {
+        "id": "user-member",
+        "name": "Nomsa Dlamini",
+        "role": "member",
+        "email": "nomsa@example.test"
+      },
+      "portal": {
+        "member": {
+          "userId": "user-member",
+          "name": "Nomsa Dlamini",
+          "preferredName": "Nomsa",
+          "dateOfBirth": "1959-04-12",
+          "phone": "+27000000000",
+          "email": "nomsa@example.test",
+          "tier": "monitor",
+          "status": "active",
+          "address": "12 Example Lane, Morningside, Durban",
+          "geo": {
+            "lat": -29.826,
+            "lng": 31.016
+          },
+          "medicalAidScheme": "Example Medical Aid",
+          "medicalAidNumber": "DEMO-0001",
+          "nextOfKin": {
+            "name": "Lindiwe Dlamini",
+            "phone": "+27000000000"
+          },
+          "doctor": {
+            "name": "Dr Priya Naicker",
+            "phone": "+27000000000"
+          },
+          "coordinator": "Sister Thandi Mkhize",
+          "conditions": [
+            "Hypertension"
+          ],
+          "allergies": [
+            "Penicillin"
+          ],
+          "demo": true,
+          "id": "member-demo",
+          "memberId": null,
+          "createdAt": "2026-10-14T15:02:39.607Z",
+          "updatedAt": "2026-10-14T15:02:39.607Z"
+        },
+        "subscription": {
+          "tier": "monitor",
+          "amount": 170000,
+          "billingDay": 1,
+          "paymentMethod": "card",
+          "status": "active",
+          "startedAt": "2026-08-30T06:15:00.000Z",
+          "nextBillingAt": "2026-10-31T22:00:00.000Z",
+          "test": true,
+          "id": "subscription-demo",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.612Z",
+          "updatedAt": "2026-10-14T15:02:39.612Z"
+        },
+        "invoices": [
+          {
+            "type": "retainer",
+            "reference": "PW-DEMO-001",
+            "amount": 170000,
+            "status": "paid",
+            "dueAt": "2026-10-01T06:15:00.000Z",
+            "paidAt": "2026-10-01T06:15:00.000Z",
+            "description": "Monitor membership • example invoice",
+            "test": true,
+            "id": "d185827c-51e8-4d72-9ea1-c1b8571c2cc1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.613Z",
+            "updatedAt": "2026-10-14T15:02:39.613Z"
+          }
+        ],
+        "consents": [
+          {
+            "type": "delivery",
+            "version": "2026-10-v1",
+            "grantedAt": "2026-08-30T06:15:00.000Z",
+            "revokedAt": null,
+            "id": "4d67bafe-a6eb-4a93-826a-739e127a4576",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.610Z",
+            "updatedAt": "2026-10-14T15:02:39.610Z"
+          },
+          {
+            "type": "communications",
+            "version": "2026-10-v1",
+            "grantedAt": "2026-08-30T06:15:00.000Z",
+            "revokedAt": null,
+            "id": "f921c8ea-d3a8-4959-aa42-fbb8ef6f26e1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.609Z",
+            "updatedAt": "2026-10-14T15:02:39.609Z"
+          },
+          {
+            "type": "care",
+            "version": "2026-10-v1",
+            "grantedAt": "2026-08-30T06:15:00.000Z",
+            "revokedAt": null,
+            "id": "2dc38574-f4ae-4a3e-9054-ee52c17aaeaa",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.608Z",
+            "updatedAt": "2026-10-14T15:02:39.608Z"
+          }
+        ],
+        "family": [
+          {
+            "userId": "user-family",
+            "name": "Lindiwe Dlamini",
+            "email": "family@example.test",
+            "scope": "summary_updates",
+            "consultNotes": false,
+            "emergency": true,
+            "grantedAt": "2026-09-14T06:15:00.000Z",
+            "revokedAt": null,
+            "id": "cc40ce6a-1349-44d0-a9c8-8339fe0e2192",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.611Z",
+            "updatedAt": "2026-10-14T15:02:39.611Z"
+          }
+        ],
+        "benefits": [
+          {
+            "category": "Dental",
+            "annualLimit": 200000,
+            "used": 0,
+            "nextScheduledAt": null,
+            "source": "Example benefit — verify with scheme",
+            "id": "a8fe92a9-bdee-4fab-b837-944b393c476f",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.644Z",
+            "updatedAt": "2026-10-14T15:02:39.644Z"
+          }
+        ],
+        "vitals": [
+          {
+            "type": "heart_rate",
+            "value": 72,
+            "unit": "bpm",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "a9addd99-32a3-4194-b080-1c0e0ef819d1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "20fe70d4-585b-42b1-8a49-253fee0309b8",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "442fb377-6eea-4df3-98d1-99e93f142036",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.632Z",
+            "updatedAt": "2026-10-14T15:02:39.632Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 78,
+            "unit": "mmHg",
+            "takenAt": "2026-10-13T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "72b3a58d-b089-4aaa-95bc-0c90777911b3",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.631Z",
+            "updatedAt": "2026-10-14T15:02:39.631Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.7,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-12T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "0b518d6f-b8e2-4087-b91d-90696e8cb99c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.630Z",
+            "updatedAt": "2026-10-14T15:02:39.630Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 126,
+            "secondary": 79,
+            "unit": "mmHg",
+            "takenAt": "2026-10-12T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "bc0e140c-a14f-420d-8829-fb6dc74743ab",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.629Z",
+            "updatedAt": "2026-10-14T15:02:39.629Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 129,
+            "secondary": 80,
+            "unit": "mmHg",
+            "takenAt": "2026-10-11T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "46f6284c-09b7-4911-ab70-b51fcab800d9",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.628Z",
+            "updatedAt": "2026-10-14T15:02:39.628Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.5,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-10T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "f3c9c79b-14f2-47ba-83a4-15f361ed018b",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.627Z",
+            "updatedAt": "2026-10-14T15:02:39.627Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 81,
+            "unit": "mmHg",
+            "takenAt": "2026-10-10T06:15:00.000Z",
+            "source": "manual",
+            "flagged": true,
+            "reviewedAt": "2026-10-11T06:15:00.000Z",
+            "id": "4dccd447-971d-47dc-ab54-dd8cb0c8b7a4",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.626Z",
+            "updatedAt": "2026-10-14T15:02:39.626Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-09T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "7cd2edfa-1f10-46cc-8057-9ec351d8bdb3",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.625Z",
+            "updatedAt": "2026-10-14T15:02:39.625Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-08T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "db68b31b-65cb-4533-93e7-695d5ff92fee",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.624Z",
+            "updatedAt": "2026-10-14T15:02:39.624Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 126,
+            "secondary": 78,
+            "unit": "mmHg",
+            "takenAt": "2026-10-08T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "96bb1196-03a6-4796-8b54-350d018c10d5",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.623Z",
+            "updatedAt": "2026-10-14T15:02:39.623Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 129,
+            "secondary": 79,
+            "unit": "mmHg",
+            "takenAt": "2026-10-07T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "9b0595d4-8c8a-4be8-874e-2c0f1624841c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.622Z",
+            "updatedAt": "2026-10-14T15:02:39.622Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.7,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-06T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "ae81325e-68f4-46a5-af05-9a2e37ebd7fe",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.621Z",
+            "updatedAt": "2026-10-14T15:02:39.621Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 80,
+            "unit": "mmHg",
+            "takenAt": "2026-10-06T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "85575380-b3c0-4fc3-9d19-8df7b5a602bd",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.620Z",
+            "updatedAt": "2026-10-14T15:02:39.620Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 81,
+            "unit": "mmHg",
+            "takenAt": "2026-10-05T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "4eca7b16-555e-4c4c-85f4-a61a5b791c7d",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.619Z",
+            "updatedAt": "2026-10-14T15:02:39.619Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.5,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-04T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "dc670841-8454-4d08-ad98-7e109b18e7d9",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.619Z",
+            "updatedAt": "2026-10-14T15:02:39.619Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 126,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-04T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "8f6887c6-cb90-4f58-a544-668bfc1a3c09",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.618Z",
+            "updatedAt": "2026-10-14T15:02:39.618Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 129,
+            "secondary": 78,
+            "unit": "mmHg",
+            "takenAt": "2026-10-03T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "9178c6a1-1ee7-4dd3-ad42-a61d149d5eb2",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.617Z",
+            "updatedAt": "2026-10-14T15:02:39.617Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-02T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "c5e7ec02-11de-4031-9714-9522b58f1bc1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.616Z",
+            "updatedAt": "2026-10-14T15:02:39.616Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 79,
+            "unit": "mmHg",
+            "takenAt": "2026-10-02T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "b5f7726a-a34f-4c44-855c-ab816151606c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.615Z",
+            "updatedAt": "2026-10-14T15:02:39.615Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 80,
+            "unit": "mmHg",
+            "takenAt": "2026-10-01T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "13a237c7-985b-40fb-aee0-0922380df4da",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.614Z",
+            "updatedAt": "2026-10-14T15:02:39.614Z"
+          }
+        ],
+        "medications": [
+          {
+            "drug": "Amlodipine",
+            "strength": "5 mg",
+            "directions": "As prescribed on your dispensing label",
+            "quantity": 30,
+            "prescriber": "Dr Priya Naicker",
+            "pharmacy": "Coastline Pharmacy (demo)",
+            "dispensedAt": "2026-09-23T06:15:00.000Z",
+            "status": "current",
+            "source": "Demo record",
+            "id": "5a22ecd7-d612-410c-ac08-c0265e04780c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.639Z",
+            "updatedAt": "2026-10-14T15:02:39.639Z"
+          }
+        ],
+        "consults": [
+          {
+            "reason": "Routine blood pressure review",
+            "mode": "virtual",
+            "status": "completed",
+            "scheduledAt": "2026-10-07T08:15:00.000Z",
+            "doctorId": "user-doctor",
+            "doctorName": "Dr Priya Naicker",
+            "note": "Fictional demonstration note. Readings reviewed and follow-up arranged.",
+            "signedAt": "2026-10-07T09:15:00.000Z",
+            "id": "c19eb5f4-c0c9-402d-bd01-0b8321266bc1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.638Z",
+            "updatedAt": "2026-10-14T15:02:39.638Z"
+          },
+          {
+            "reason": "Monthly wellness check-in",
+            "mode": "virtual",
+            "urgency": "routine",
+            "status": "scheduled",
+            "scheduledAt": "2026-10-15T08:30:00.000Z",
+            "doctorId": "user-doctor",
+            "doctorName": "Dr Priya Naicker",
+            "note": "",
+            "signedAt": null,
+            "id": "consult-demo",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.637Z",
+            "updatedAt": "2026-10-14T15:02:39.637Z"
+          }
+        ],
+        "orders": [
+          {
+            "status": "ready",
+            "pharmacy": "Coastline Pharmacy (demo)",
+            "scriptId": null,
+            "description": "Monthly prescription",
+            "items": [
+              {
+                "drug": "Amlodipine",
+                "strength": "5 mg",
+                "quantity": 30,
+                "directions": "As prescribed on dispensing label",
+                "scheduleClass": 0,
+                "coldChain": false
+              }
+            ],
+            "events": [
+              {
+                "status": "sent",
+                "at": "2026-10-13T06:15:00.000Z"
+              },
+              {
+                "status": "dispensing",
+                "at": "2026-10-14T07:15:00.000Z"
+              },
+              {
+                "status": "ready",
+                "at": "2026-10-14T08:15:00.000Z"
+              }
+            ],
+            "driverId": "user-driver",
+            "eta": "Awaiting collection",
+            "address": "12 Example Lane, Morningside, Durban",
+            "id": "order-demo",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.641Z",
+            "updatedAt": "2026-10-14T15:02:39.641Z"
+          }
+        ],
+        "reminders": [
+          {
+            "type": "medication",
+            "title": "Check your prescribed medication",
+            "time": "08:30",
+            "enabled": true,
+            "acknowledgedAt": null,
+            "id": "d07a52e8-5745-4ed6-8c7f-529cd2b3640a",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.643Z",
+            "updatedAt": "2026-10-14T15:02:39.643Z"
+          },
+          {
+            "type": "reading",
+            "title": "Your morning blood pressure",
+            "time": "08:00",
+            "enabled": true,
+            "acknowledgedAt": null,
+            "id": "3eb1ed26-5cee-4560-abbc-558f4418d24b",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.642Z",
+            "updatedAt": "2026-10-14T15:02:39.642Z"
+          }
+        ],
+        "nurseNotes": [],
+        "thresholds": [
+          {
+            "type": "glucose",
+            "low": 4,
+            "high": 7.8,
+            "setBy": "user-doctor",
+            "demoProtocol": true,
+            "id": "13066ff7-9a98-489b-9225-cd43f3be0cfd",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.636Z",
+            "updatedAt": "2026-10-14T15:02:39.636Z"
+          },
+          {
+            "type": "blood_pressure",
+            "low": 90,
+            "high": 140,
+            "secondaryHigh": 90,
+            "setBy": "user-doctor",
+            "demoProtocol": true,
+            "id": "b8818f96-c1c4-44ca-abd1-becc919b25b4",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.635Z",
+            "updatedAt": "2026-10-14T15:02:39.635Z"
+          }
+        ],
+        "documents": [
+          {
+            "type": "pathology",
+            "name": "Routine blood results.pdf",
+            "documentDate": "2026-10-07",
+            "tags": [
+              "Routine check"
+            ],
+            "status": "verified",
+            "verifiedBy": "user-nurse",
+            "verifiedAt": "2026-10-08T06:15:00.000Z",
+            "extractedText": "Fictional example document. No clinical result is contained in this demo.",
+            "hasFile": false,
+            "id": "62866e24-ab8b-4343-879a-3c3cd94552ea",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.640Z",
+            "updatedAt": "2026-10-14T15:02:39.640Z"
+          }
+        ]
+      },
+      "emergency": {
+        "id": "member-demo",
+        "name": "Nomsa Dlamini",
+        "conditions": [
+          "Hypertension"
+        ],
+        "allergies": [
+          "Penicillin"
+        ],
+        "doctor": {
+          "name": "Dr Priya Naicker",
+          "phone": "+27000000000"
+        },
+        "nextOfKin": {
+          "name": "Lindiwe Dlamini",
+          "phone": "+27000000000"
+        },
+        "medicalAidScheme": "Example Medical Aid",
+        "medicalAidNumber": "DEMO-0001",
+        "medications": [
+          {
+            "drug": "Amlodipine",
+            "strength": "5 mg",
+            "directions": "As prescribed on your dispensing label",
+            "quantity": 30,
+            "prescriber": "Dr Priya Naicker",
+            "pharmacy": "Coastline Pharmacy (demo)",
+            "dispensedAt": "2026-09-23T06:15:00.000Z",
+            "status": "current",
+            "source": "Demo record",
+            "id": "5a22ecd7-d612-410c-ac08-c0265e04780c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.639Z",
+            "updatedAt": "2026-10-14T15:02:39.639Z"
+          }
+        ],
+        "vitals": [
+          {
+            "type": "heart_rate",
+            "value": 72,
+            "unit": "bpm",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "a9addd99-32a3-4194-b080-1c0e0ef819d1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "20fe70d4-585b-42b1-8a49-253fee0309b8",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "442fb377-6eea-4df3-98d1-99e93f142036",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.632Z",
+            "updatedAt": "2026-10-14T15:02:39.632Z"
+          }
+        ],
+        "generatedAt": "2026-10-14T15:02:39.939Z"
+      },
+      "audit": [
+        {
+          "actorId": "user-member",
+          "action": "view",
+          "entity": "audit_log",
+          "entityId": "member-demo",
+          "at": "2026-10-14T15:02:39.940Z",
+          "ip": "127.0.0.1",
+          "id": "06ecee6e-b612-4bc7-915e-73e6beff0086",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.940Z",
+          "updatedAt": "2026-10-14T15:02:39.940Z"
+        },
+        {
+          "actorId": "user-member",
+          "action": "view",
+          "entity": "emergency_summary",
+          "entityId": "member-demo",
+          "at": "2026-10-14T15:02:39.926Z",
+          "ip": "127.0.0.1",
+          "id": "98df3d53-1c48-48dc-a06b-c09f84294a5e",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.926Z",
+          "updatedAt": "2026-10-14T15:02:39.926Z"
+        },
+        {
+          "actorId": "user-member",
+          "action": "view",
+          "entity": "member_portal",
+          "entityId": "member-demo",
+          "at": "2026-10-14T15:02:39.921Z",
+          "ip": "127.0.0.1",
+          "id": "290925da-59af-45dd-a96a-fcb582cf0214",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.921Z",
+          "updatedAt": "2026-10-14T15:02:39.921Z"
+        },
+        {
+          "actorId": "system",
+          "action": "seed_demo",
+          "entity": "members",
+          "entityId": "member-demo",
+          "at": "2026-10-14T15:02:39.647Z",
+          "ip": "local",
+          "id": "7c80f012-5439-413b-ae62-f176cba2a532",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.647Z",
+          "updatedAt": "2026-10-14T15:02:39.647Z"
+        }
+      ]
+    },
+    "family": {
+      "user": {
+        "id": "user-family",
+        "name": "Lindiwe Dlamini",
+        "role": "family",
+        "email": "family@example.test"
+      },
+      "portal": {
+        "member": {
+          "id": "member-demo",
+          "name": "Nomsa Dlamini"
+        },
+        "summary": {
+          "id": "member-demo",
+          "name": "Nomsa Dlamini",
+          "conditions": [
+            "Hypertension"
+          ],
+          "allergies": [
+            "Penicillin"
+          ],
+          "doctor": {
+            "name": "Dr Priya Naicker",
+            "phone": "+27000000000"
+          },
+          "nextOfKin": {
+            "name": "Lindiwe Dlamini",
+            "phone": "+27000000000"
+          },
+          "medicalAidScheme": "Example Medical Aid",
+          "medicalAidNumber": "DEMO-0001",
+          "medications": [
+            {
+              "drug": "Amlodipine",
+              "strength": "5 mg",
+              "directions": "As prescribed on your dispensing label",
+              "quantity": 30,
+              "prescriber": "Dr Priya Naicker",
+              "pharmacy": "Coastline Pharmacy (demo)",
+              "dispensedAt": "2026-09-23T06:15:00.000Z",
+              "status": "current",
+              "source": "Demo record",
+              "id": "5a22ecd7-d612-410c-ac08-c0265e04780c",
+              "memberId": "member-demo",
+              "createdAt": "2026-10-14T15:02:39.639Z",
+              "updatedAt": "2026-10-14T15:02:39.639Z"
+            }
+          ],
+          "vitals": [
+            {
+              "type": "heart_rate",
+              "value": 72,
+              "unit": "bpm",
+              "takenAt": "2026-10-14T06:15:00.000Z",
+              "source": "manual",
+              "flagged": false,
+              "id": "a9addd99-32a3-4194-b080-1c0e0ef819d1",
+              "memberId": "member-demo",
+              "createdAt": "2026-10-14T15:02:39.633Z",
+              "updatedAt": "2026-10-14T15:02:39.633Z"
+            },
+            {
+              "type": "glucose",
+              "value": 5.3,
+              "unit": "mmol/L",
+              "takenAt": "2026-10-14T06:15:00.000Z",
+              "source": "manual",
+              "flagged": false,
+              "id": "20fe70d4-585b-42b1-8a49-253fee0309b8",
+              "memberId": "member-demo",
+              "createdAt": "2026-10-14T15:02:39.633Z",
+              "updatedAt": "2026-10-14T15:02:39.633Z"
+            },
+            {
+              "type": "blood_pressure",
+              "value": 120,
+              "secondary": 77,
+              "unit": "mmHg",
+              "takenAt": "2026-10-14T06:15:00.000Z",
+              "source": "manual",
+              "flagged": false,
+              "reviewedAt": null,
+              "id": "442fb377-6eea-4df3-98d1-99e93f142036",
+              "memberId": "member-demo",
+              "createdAt": "2026-10-14T15:02:39.632Z",
+              "updatedAt": "2026-10-14T15:02:39.632Z"
+            }
+          ],
+          "generatedAt": "2026-10-14T15:02:39.948Z"
+        },
+        "familyScope": "summary_updates",
+        "emergencyAllowed": true,
+        "consults": [],
+        "updates": [
+          {
+            "id": "c19eb5f4-c0c9-402d-bd01-0b8321266bc1",
+            "status": "completed",
+            "mode": "virtual",
+            "scheduledAt": "2026-10-07T08:15:00.000Z"
+          },
+          {
+            "id": "consult-demo",
+            "status": "scheduled",
+            "mode": "virtual",
+            "scheduledAt": "2026-10-15T08:30:00.000Z"
+          }
+        ]
+      },
+      "emergency": {
+        "id": "member-demo",
+        "name": "Nomsa Dlamini",
+        "conditions": [
+          "Hypertension"
+        ],
+        "allergies": [
+          "Penicillin"
+        ],
+        "doctor": {
+          "name": "Dr Priya Naicker",
+          "phone": "+27000000000"
+        },
+        "nextOfKin": {
+          "name": "Lindiwe Dlamini",
+          "phone": "+27000000000"
+        },
+        "medicalAidScheme": "Example Medical Aid",
+        "medicalAidNumber": "DEMO-0001",
+        "medications": [
+          {
+            "drug": "Amlodipine",
+            "strength": "5 mg",
+            "directions": "As prescribed on your dispensing label",
+            "quantity": 30,
+            "prescriber": "Dr Priya Naicker",
+            "pharmacy": "Coastline Pharmacy (demo)",
+            "dispensedAt": "2026-09-23T06:15:00.000Z",
+            "status": "current",
+            "source": "Demo record",
+            "id": "5a22ecd7-d612-410c-ac08-c0265e04780c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.639Z",
+            "updatedAt": "2026-10-14T15:02:39.639Z"
+          }
+        ],
+        "vitals": [
+          {
+            "type": "heart_rate",
+            "value": 72,
+            "unit": "bpm",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "a9addd99-32a3-4194-b080-1c0e0ef819d1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "20fe70d4-585b-42b1-8a49-253fee0309b8",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "442fb377-6eea-4df3-98d1-99e93f142036",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.632Z",
+            "updatedAt": "2026-10-14T15:02:39.632Z"
+          }
+        ],
+        "generatedAt": "2026-10-14T15:02:39.951Z"
+      }
+    },
+    "doctor": {
+      "user": {
+        "id": "user-doctor",
+        "name": "Dr Priya Naicker",
+        "role": "doctor",
+        "email": "doctor@example.test"
+      },
+      "staff": {
+        "members": [
+          {
+            "id": "member-demo",
+            "name": "Nomsa Dlamini",
+            "tier": "monitor",
+            "status": "active",
+            "coordinator": "Sister Thandi Mkhize",
+            "email": "nomsa@example.test"
+          }
+        ],
+        "clinics": [
+          {
+            "villageId": "village-demo",
+            "date": "2026-10-15T08:30:00.000Z",
+            "doctorId": "user-doctor",
+            "nurseId": "user-nurse",
+            "attendees": [],
+            "id": "2a4356f4-30a1-4415-b698-b5455a49226a",
+            "memberId": null,
+            "createdAt": "2026-10-14T15:02:39.645Z",
+            "updatedAt": "2026-10-14T15:02:39.645Z"
+          }
+        ],
+        "villages": [
+          {
+            "name": "Oceanview Village (demo)",
+            "operator": "Example operator",
+            "address": "Durban North",
+            "residentCount": 0,
+            "clinicDay": "Thursday",
+            "contractAmount": 0,
+            "id": "village-demo",
+            "memberId": null,
+            "createdAt": "2026-10-14T15:02:39.644Z",
+            "updatedAt": "2026-10-14T15:02:39.644Z"
+          }
+        ],
+        "vitals": [
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "20fe70d4-585b-42b1-8a49-253fee0309b8",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "heart_rate",
+            "value": 72,
+            "unit": "bpm",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "a9addd99-32a3-4194-b080-1c0e0ef819d1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "442fb377-6eea-4df3-98d1-99e93f142036",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.632Z",
+            "updatedAt": "2026-10-14T15:02:39.632Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 78,
+            "unit": "mmHg",
+            "takenAt": "2026-10-13T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "72b3a58d-b089-4aaa-95bc-0c90777911b3",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.631Z",
+            "updatedAt": "2026-10-14T15:02:39.631Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.7,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-12T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "0b518d6f-b8e2-4087-b91d-90696e8cb99c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.630Z",
+            "updatedAt": "2026-10-14T15:02:39.630Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 126,
+            "secondary": 79,
+            "unit": "mmHg",
+            "takenAt": "2026-10-12T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "bc0e140c-a14f-420d-8829-fb6dc74743ab",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.629Z",
+            "updatedAt": "2026-10-14T15:02:39.629Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 129,
+            "secondary": 80,
+            "unit": "mmHg",
+            "takenAt": "2026-10-11T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "46f6284c-09b7-4911-ab70-b51fcab800d9",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.628Z",
+            "updatedAt": "2026-10-14T15:02:39.628Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.5,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-10T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "f3c9c79b-14f2-47ba-83a4-15f361ed018b",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.627Z",
+            "updatedAt": "2026-10-14T15:02:39.627Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 81,
+            "unit": "mmHg",
+            "takenAt": "2026-10-10T06:15:00.000Z",
+            "source": "manual",
+            "flagged": true,
+            "reviewedAt": "2026-10-11T06:15:00.000Z",
+            "id": "4dccd447-971d-47dc-ab54-dd8cb0c8b7a4",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.626Z",
+            "updatedAt": "2026-10-14T15:02:39.626Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-09T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "7cd2edfa-1f10-46cc-8057-9ec351d8bdb3",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.625Z",
+            "updatedAt": "2026-10-14T15:02:39.625Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-08T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "db68b31b-65cb-4533-93e7-695d5ff92fee",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.624Z",
+            "updatedAt": "2026-10-14T15:02:39.624Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 126,
+            "secondary": 78,
+            "unit": "mmHg",
+            "takenAt": "2026-10-08T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "96bb1196-03a6-4796-8b54-350d018c10d5",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.623Z",
+            "updatedAt": "2026-10-14T15:02:39.623Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 129,
+            "secondary": 79,
+            "unit": "mmHg",
+            "takenAt": "2026-10-07T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "9b0595d4-8c8a-4be8-874e-2c0f1624841c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.622Z",
+            "updatedAt": "2026-10-14T15:02:39.622Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.7,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-06T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "ae81325e-68f4-46a5-af05-9a2e37ebd7fe",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.621Z",
+            "updatedAt": "2026-10-14T15:02:39.621Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 80,
+            "unit": "mmHg",
+            "takenAt": "2026-10-06T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "85575380-b3c0-4fc3-9d19-8df7b5a602bd",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.620Z",
+            "updatedAt": "2026-10-14T15:02:39.620Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.5,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-04T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "dc670841-8454-4d08-ad98-7e109b18e7d9",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.619Z",
+            "updatedAt": "2026-10-14T15:02:39.619Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 81,
+            "unit": "mmHg",
+            "takenAt": "2026-10-05T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "4eca7b16-555e-4c4c-85f4-a61a5b791c7d",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.619Z",
+            "updatedAt": "2026-10-14T15:02:39.619Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 126,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-04T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "8f6887c6-cb90-4f58-a544-668bfc1a3c09",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.618Z",
+            "updatedAt": "2026-10-14T15:02:39.618Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 129,
+            "secondary": 78,
+            "unit": "mmHg",
+            "takenAt": "2026-10-03T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "9178c6a1-1ee7-4dd3-ad42-a61d149d5eb2",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.617Z",
+            "updatedAt": "2026-10-14T15:02:39.617Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-02T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "c5e7ec02-11de-4031-9714-9522b58f1bc1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.616Z",
+            "updatedAt": "2026-10-14T15:02:39.616Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 79,
+            "unit": "mmHg",
+            "takenAt": "2026-10-02T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "b5f7726a-a34f-4c44-855c-ab816151606c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.615Z",
+            "updatedAt": "2026-10-14T15:02:39.615Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 80,
+            "unit": "mmHg",
+            "takenAt": "2026-10-01T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "13a237c7-985b-40fb-aee0-0922380df4da",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.614Z",
+            "updatedAt": "2026-10-14T15:02:39.614Z"
+          }
+        ],
+        "consults": [
+          {
+            "reason": "Routine blood pressure review",
+            "mode": "virtual",
+            "status": "completed",
+            "scheduledAt": "2026-10-07T08:15:00.000Z",
+            "doctorId": "user-doctor",
+            "doctorName": "Dr Priya Naicker",
+            "note": "Fictional demonstration note. Readings reviewed and follow-up arranged.",
+            "signedAt": "2026-10-07T09:15:00.000Z",
+            "id": "c19eb5f4-c0c9-402d-bd01-0b8321266bc1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.638Z",
+            "updatedAt": "2026-10-14T15:02:39.638Z"
+          },
+          {
+            "reason": "Monthly wellness check-in",
+            "mode": "virtual",
+            "urgency": "routine",
+            "status": "scheduled",
+            "scheduledAt": "2026-10-15T08:30:00.000Z",
+            "doctorId": "user-doctor",
+            "doctorName": "Dr Priya Naicker",
+            "note": "",
+            "signedAt": null,
+            "id": "consult-demo",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.637Z",
+            "updatedAt": "2026-10-14T15:02:39.637Z"
+          }
+        ],
+        "orders": [
+          {
+            "status": "ready",
+            "pharmacy": "Coastline Pharmacy (demo)",
+            "scriptId": null,
+            "description": "Monthly prescription",
+            "items": [
+              {
+                "drug": "Amlodipine",
+                "strength": "5 mg",
+                "quantity": 30,
+                "directions": "As prescribed on dispensing label",
+                "scheduleClass": 0,
+                "coldChain": false
+              }
+            ],
+            "events": [
+              {
+                "status": "sent",
+                "at": "2026-10-13T06:15:00.000Z"
+              },
+              {
+                "status": "dispensing",
+                "at": "2026-10-14T07:15:00.000Z"
+              },
+              {
+                "status": "ready",
+                "at": "2026-10-14T08:15:00.000Z"
+              }
+            ],
+            "driverId": "user-driver",
+            "eta": "Awaiting collection",
+            "address": "12 Example Lane, Morningside, Durban",
+            "id": "order-demo",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.641Z",
+            "updatedAt": "2026-10-14T15:02:39.641Z"
+          }
+        ],
+        "documents": [],
+        "missed": []
+      },
+      "portal": {
+        "member": {
+          "userId": "user-member",
+          "name": "Nomsa Dlamini",
+          "preferredName": "Nomsa",
+          "dateOfBirth": "1959-04-12",
+          "phone": "+27000000000",
+          "email": "nomsa@example.test",
+          "tier": "monitor",
+          "status": "active",
+          "address": "12 Example Lane, Morningside, Durban",
+          "geo": {
+            "lat": -29.826,
+            "lng": 31.016
+          },
+          "medicalAidScheme": "Example Medical Aid",
+          "medicalAidNumber": "DEMO-0001",
+          "nextOfKin": {
+            "name": "Lindiwe Dlamini",
+            "phone": "+27000000000"
+          },
+          "doctor": {
+            "name": "Dr Priya Naicker",
+            "phone": "+27000000000"
+          },
+          "coordinator": "Sister Thandi Mkhize",
+          "conditions": [
+            "Hypertension"
+          ],
+          "allergies": [
+            "Penicillin"
+          ],
+          "demo": true,
+          "id": "member-demo",
+          "memberId": null,
+          "createdAt": "2026-10-14T15:02:39.607Z",
+          "updatedAt": "2026-10-14T15:02:39.607Z"
+        },
+        "subscription": {
+          "tier": "monitor",
+          "amount": 170000,
+          "billingDay": 1,
+          "paymentMethod": "card",
+          "status": "active",
+          "startedAt": "2026-08-30T06:15:00.000Z",
+          "nextBillingAt": "2026-10-31T22:00:00.000Z",
+          "test": true,
+          "id": "subscription-demo",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.612Z",
+          "updatedAt": "2026-10-14T15:02:39.612Z"
+        },
+        "invoices": [
+          {
+            "type": "retainer",
+            "reference": "PW-DEMO-001",
+            "amount": 170000,
+            "status": "paid",
+            "dueAt": "2026-10-01T06:15:00.000Z",
+            "paidAt": "2026-10-01T06:15:00.000Z",
+            "description": "Monitor membership • example invoice",
+            "test": true,
+            "id": "d185827c-51e8-4d72-9ea1-c1b8571c2cc1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.613Z",
+            "updatedAt": "2026-10-14T15:02:39.613Z"
+          }
+        ],
+        "consents": [
+          {
+            "type": "delivery",
+            "version": "2026-10-v1",
+            "grantedAt": "2026-08-30T06:15:00.000Z",
+            "revokedAt": null,
+            "id": "4d67bafe-a6eb-4a93-826a-739e127a4576",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.610Z",
+            "updatedAt": "2026-10-14T15:02:39.610Z"
+          },
+          {
+            "type": "communications",
+            "version": "2026-10-v1",
+            "grantedAt": "2026-08-30T06:15:00.000Z",
+            "revokedAt": null,
+            "id": "f921c8ea-d3a8-4959-aa42-fbb8ef6f26e1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.609Z",
+            "updatedAt": "2026-10-14T15:02:39.609Z"
+          },
+          {
+            "type": "care",
+            "version": "2026-10-v1",
+            "grantedAt": "2026-08-30T06:15:00.000Z",
+            "revokedAt": null,
+            "id": "2dc38574-f4ae-4a3e-9054-ee52c17aaeaa",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.608Z",
+            "updatedAt": "2026-10-14T15:02:39.608Z"
+          }
+        ],
+        "family": [
+          {
+            "userId": "user-family",
+            "name": "Lindiwe Dlamini",
+            "email": "family@example.test",
+            "scope": "summary_updates",
+            "consultNotes": false,
+            "emergency": true,
+            "grantedAt": "2026-09-14T06:15:00.000Z",
+            "revokedAt": null,
+            "id": "cc40ce6a-1349-44d0-a9c8-8339fe0e2192",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.611Z",
+            "updatedAt": "2026-10-14T15:02:39.611Z"
+          }
+        ],
+        "benefits": [
+          {
+            "category": "Dental",
+            "annualLimit": 200000,
+            "used": 0,
+            "nextScheduledAt": null,
+            "source": "Example benefit — verify with scheme",
+            "id": "a8fe92a9-bdee-4fab-b837-944b393c476f",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.644Z",
+            "updatedAt": "2026-10-14T15:02:39.644Z"
+          }
+        ],
+        "vitals": [
+          {
+            "type": "heart_rate",
+            "value": 72,
+            "unit": "bpm",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "a9addd99-32a3-4194-b080-1c0e0ef819d1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "20fe70d4-585b-42b1-8a49-253fee0309b8",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "442fb377-6eea-4df3-98d1-99e93f142036",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.632Z",
+            "updatedAt": "2026-10-14T15:02:39.632Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 78,
+            "unit": "mmHg",
+            "takenAt": "2026-10-13T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "72b3a58d-b089-4aaa-95bc-0c90777911b3",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.631Z",
+            "updatedAt": "2026-10-14T15:02:39.631Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.7,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-12T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "0b518d6f-b8e2-4087-b91d-90696e8cb99c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.630Z",
+            "updatedAt": "2026-10-14T15:02:39.630Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 126,
+            "secondary": 79,
+            "unit": "mmHg",
+            "takenAt": "2026-10-12T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "bc0e140c-a14f-420d-8829-fb6dc74743ab",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.629Z",
+            "updatedAt": "2026-10-14T15:02:39.629Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 129,
+            "secondary": 80,
+            "unit": "mmHg",
+            "takenAt": "2026-10-11T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "46f6284c-09b7-4911-ab70-b51fcab800d9",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.628Z",
+            "updatedAt": "2026-10-14T15:02:39.628Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.5,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-10T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "f3c9c79b-14f2-47ba-83a4-15f361ed018b",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.627Z",
+            "updatedAt": "2026-10-14T15:02:39.627Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 81,
+            "unit": "mmHg",
+            "takenAt": "2026-10-10T06:15:00.000Z",
+            "source": "manual",
+            "flagged": true,
+            "reviewedAt": "2026-10-11T06:15:00.000Z",
+            "id": "4dccd447-971d-47dc-ab54-dd8cb0c8b7a4",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.626Z",
+            "updatedAt": "2026-10-14T15:02:39.626Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-09T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "7cd2edfa-1f10-46cc-8057-9ec351d8bdb3",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.625Z",
+            "updatedAt": "2026-10-14T15:02:39.625Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-08T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "db68b31b-65cb-4533-93e7-695d5ff92fee",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.624Z",
+            "updatedAt": "2026-10-14T15:02:39.624Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 126,
+            "secondary": 78,
+            "unit": "mmHg",
+            "takenAt": "2026-10-08T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "96bb1196-03a6-4796-8b54-350d018c10d5",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.623Z",
+            "updatedAt": "2026-10-14T15:02:39.623Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 129,
+            "secondary": 79,
+            "unit": "mmHg",
+            "takenAt": "2026-10-07T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "9b0595d4-8c8a-4be8-874e-2c0f1624841c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.622Z",
+            "updatedAt": "2026-10-14T15:02:39.622Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.7,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-06T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "ae81325e-68f4-46a5-af05-9a2e37ebd7fe",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.621Z",
+            "updatedAt": "2026-10-14T15:02:39.621Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 80,
+            "unit": "mmHg",
+            "takenAt": "2026-10-06T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "85575380-b3c0-4fc3-9d19-8df7b5a602bd",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.620Z",
+            "updatedAt": "2026-10-14T15:02:39.620Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 81,
+            "unit": "mmHg",
+            "takenAt": "2026-10-05T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "4eca7b16-555e-4c4c-85f4-a61a5b791c7d",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.619Z",
+            "updatedAt": "2026-10-14T15:02:39.619Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.5,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-04T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "dc670841-8454-4d08-ad98-7e109b18e7d9",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.619Z",
+            "updatedAt": "2026-10-14T15:02:39.619Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 126,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-04T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "8f6887c6-cb90-4f58-a544-668bfc1a3c09",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.618Z",
+            "updatedAt": "2026-10-14T15:02:39.618Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 129,
+            "secondary": 78,
+            "unit": "mmHg",
+            "takenAt": "2026-10-03T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "9178c6a1-1ee7-4dd3-ad42-a61d149d5eb2",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.617Z",
+            "updatedAt": "2026-10-14T15:02:39.617Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-02T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "c5e7ec02-11de-4031-9714-9522b58f1bc1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.616Z",
+            "updatedAt": "2026-10-14T15:02:39.616Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 79,
+            "unit": "mmHg",
+            "takenAt": "2026-10-02T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "b5f7726a-a34f-4c44-855c-ab816151606c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.615Z",
+            "updatedAt": "2026-10-14T15:02:39.615Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 80,
+            "unit": "mmHg",
+            "takenAt": "2026-10-01T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "13a237c7-985b-40fb-aee0-0922380df4da",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.614Z",
+            "updatedAt": "2026-10-14T15:02:39.614Z"
+          }
+        ],
+        "medications": [
+          {
+            "drug": "Amlodipine",
+            "strength": "5 mg",
+            "directions": "As prescribed on your dispensing label",
+            "quantity": 30,
+            "prescriber": "Dr Priya Naicker",
+            "pharmacy": "Coastline Pharmacy (demo)",
+            "dispensedAt": "2026-09-23T06:15:00.000Z",
+            "status": "current",
+            "source": "Demo record",
+            "id": "5a22ecd7-d612-410c-ac08-c0265e04780c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.639Z",
+            "updatedAt": "2026-10-14T15:02:39.639Z"
+          }
+        ],
+        "consults": [
+          {
+            "reason": "Routine blood pressure review",
+            "mode": "virtual",
+            "status": "completed",
+            "scheduledAt": "2026-10-07T08:15:00.000Z",
+            "doctorId": "user-doctor",
+            "doctorName": "Dr Priya Naicker",
+            "note": "Fictional demonstration note. Readings reviewed and follow-up arranged.",
+            "signedAt": "2026-10-07T09:15:00.000Z",
+            "id": "c19eb5f4-c0c9-402d-bd01-0b8321266bc1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.638Z",
+            "updatedAt": "2026-10-14T15:02:39.638Z"
+          },
+          {
+            "reason": "Monthly wellness check-in",
+            "mode": "virtual",
+            "urgency": "routine",
+            "status": "scheduled",
+            "scheduledAt": "2026-10-15T08:30:00.000Z",
+            "doctorId": "user-doctor",
+            "doctorName": "Dr Priya Naicker",
+            "note": "",
+            "signedAt": null,
+            "id": "consult-demo",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.637Z",
+            "updatedAt": "2026-10-14T15:02:39.637Z"
+          }
+        ],
+        "orders": [
+          {
+            "status": "ready",
+            "pharmacy": "Coastline Pharmacy (demo)",
+            "scriptId": null,
+            "description": "Monthly prescription",
+            "items": [
+              {
+                "drug": "Amlodipine",
+                "strength": "5 mg",
+                "quantity": 30,
+                "directions": "As prescribed on dispensing label",
+                "scheduleClass": 0,
+                "coldChain": false
+              }
+            ],
+            "events": [
+              {
+                "status": "sent",
+                "at": "2026-10-13T06:15:00.000Z"
+              },
+              {
+                "status": "dispensing",
+                "at": "2026-10-14T07:15:00.000Z"
+              },
+              {
+                "status": "ready",
+                "at": "2026-10-14T08:15:00.000Z"
+              }
+            ],
+            "driverId": "user-driver",
+            "eta": "Awaiting collection",
+            "address": "12 Example Lane, Morningside, Durban",
+            "id": "order-demo",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.641Z",
+            "updatedAt": "2026-10-14T15:02:39.641Z"
+          }
+        ],
+        "reminders": [
+          {
+            "type": "medication",
+            "title": "Check your prescribed medication",
+            "time": "08:30",
+            "enabled": true,
+            "acknowledgedAt": null,
+            "id": "d07a52e8-5745-4ed6-8c7f-529cd2b3640a",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.643Z",
+            "updatedAt": "2026-10-14T15:02:39.643Z"
+          },
+          {
+            "type": "reading",
+            "title": "Your morning blood pressure",
+            "time": "08:00",
+            "enabled": true,
+            "acknowledgedAt": null,
+            "id": "3eb1ed26-5cee-4560-abbc-558f4418d24b",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.642Z",
+            "updatedAt": "2026-10-14T15:02:39.642Z"
+          }
+        ],
+        "nurseNotes": [],
+        "thresholds": [
+          {
+            "type": "glucose",
+            "low": 4,
+            "high": 7.8,
+            "setBy": "user-doctor",
+            "demoProtocol": true,
+            "id": "13066ff7-9a98-489b-9225-cd43f3be0cfd",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.636Z",
+            "updatedAt": "2026-10-14T15:02:39.636Z"
+          },
+          {
+            "type": "blood_pressure",
+            "low": 90,
+            "high": 140,
+            "secondaryHigh": 90,
+            "setBy": "user-doctor",
+            "demoProtocol": true,
+            "id": "b8818f96-c1c4-44ca-abd1-becc919b25b4",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.635Z",
+            "updatedAt": "2026-10-14T15:02:39.635Z"
+          }
+        ],
+        "documents": [
+          {
+            "type": "pathology",
+            "name": "Routine blood results.pdf",
+            "documentDate": "2026-10-07",
+            "tags": [
+              "Routine check"
+            ],
+            "status": "verified",
+            "verifiedBy": "user-nurse",
+            "verifiedAt": "2026-10-08T06:15:00.000Z",
+            "extractedText": "Fictional example document. No clinical result is contained in this demo.",
+            "hasFile": false,
+            "id": "62866e24-ab8b-4343-879a-3c3cd94552ea",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.640Z",
+            "updatedAt": "2026-10-14T15:02:39.640Z"
+          }
+        ]
+      },
+      "emergency": {
+        "id": "member-demo",
+        "name": "Nomsa Dlamini",
+        "conditions": [
+          "Hypertension"
+        ],
+        "allergies": [
+          "Penicillin"
+        ],
+        "doctor": {
+          "name": "Dr Priya Naicker",
+          "phone": "+27000000000"
+        },
+        "nextOfKin": {
+          "name": "Lindiwe Dlamini",
+          "phone": "+27000000000"
+        },
+        "medicalAidScheme": "Example Medical Aid",
+        "medicalAidNumber": "DEMO-0001",
+        "medications": [
+          {
+            "drug": "Amlodipine",
+            "strength": "5 mg",
+            "directions": "As prescribed on your dispensing label",
+            "quantity": 30,
+            "prescriber": "Dr Priya Naicker",
+            "pharmacy": "Coastline Pharmacy (demo)",
+            "dispensedAt": "2026-09-23T06:15:00.000Z",
+            "status": "current",
+            "source": "Demo record",
+            "id": "5a22ecd7-d612-410c-ac08-c0265e04780c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.639Z",
+            "updatedAt": "2026-10-14T15:02:39.639Z"
+          }
+        ],
+        "vitals": [
+          {
+            "type": "heart_rate",
+            "value": 72,
+            "unit": "bpm",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "a9addd99-32a3-4194-b080-1c0e0ef819d1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "20fe70d4-585b-42b1-8a49-253fee0309b8",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "442fb377-6eea-4df3-98d1-99e93f142036",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.632Z",
+            "updatedAt": "2026-10-14T15:02:39.632Z"
+          }
+        ],
+        "generatedAt": "2026-10-14T15:02:39.965Z"
+      }
+    },
+    "nurse": {
+      "user": {
+        "id": "user-nurse",
+        "name": "Sister Thandi Mkhize",
+        "role": "nurse",
+        "email": "nurse@example.test"
+      },
+      "staff": {
+        "members": [
+          {
+            "id": "member-demo",
+            "name": "Nomsa Dlamini",
+            "tier": "monitor",
+            "status": "active",
+            "coordinator": "Sister Thandi Mkhize",
+            "email": "nomsa@example.test"
+          }
+        ],
+        "clinics": [
+          {
+            "villageId": "village-demo",
+            "date": "2026-10-15T08:30:00.000Z",
+            "doctorId": "user-doctor",
+            "nurseId": "user-nurse",
+            "attendees": [],
+            "id": "2a4356f4-30a1-4415-b698-b5455a49226a",
+            "memberId": null,
+            "createdAt": "2026-10-14T15:02:39.645Z",
+            "updatedAt": "2026-10-14T15:02:39.645Z"
+          }
+        ],
+        "villages": [
+          {
+            "name": "Oceanview Village (demo)",
+            "operator": "Example operator",
+            "address": "Durban North",
+            "residentCount": 0,
+            "clinicDay": "Thursday",
+            "contractAmount": 0,
+            "id": "village-demo",
+            "memberId": null,
+            "createdAt": "2026-10-14T15:02:39.644Z",
+            "updatedAt": "2026-10-14T15:02:39.644Z"
+          }
+        ],
+        "vitals": [
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "20fe70d4-585b-42b1-8a49-253fee0309b8",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "heart_rate",
+            "value": 72,
+            "unit": "bpm",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "a9addd99-32a3-4194-b080-1c0e0ef819d1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "442fb377-6eea-4df3-98d1-99e93f142036",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.632Z",
+            "updatedAt": "2026-10-14T15:02:39.632Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 78,
+            "unit": "mmHg",
+            "takenAt": "2026-10-13T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "72b3a58d-b089-4aaa-95bc-0c90777911b3",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.631Z",
+            "updatedAt": "2026-10-14T15:02:39.631Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.7,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-12T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "0b518d6f-b8e2-4087-b91d-90696e8cb99c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.630Z",
+            "updatedAt": "2026-10-14T15:02:39.630Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 126,
+            "secondary": 79,
+            "unit": "mmHg",
+            "takenAt": "2026-10-12T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "bc0e140c-a14f-420d-8829-fb6dc74743ab",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.629Z",
+            "updatedAt": "2026-10-14T15:02:39.629Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 129,
+            "secondary": 80,
+            "unit": "mmHg",
+            "takenAt": "2026-10-11T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "46f6284c-09b7-4911-ab70-b51fcab800d9",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.628Z",
+            "updatedAt": "2026-10-14T15:02:39.628Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.5,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-10T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "f3c9c79b-14f2-47ba-83a4-15f361ed018b",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.627Z",
+            "updatedAt": "2026-10-14T15:02:39.627Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 81,
+            "unit": "mmHg",
+            "takenAt": "2026-10-10T06:15:00.000Z",
+            "source": "manual",
+            "flagged": true,
+            "reviewedAt": "2026-10-11T06:15:00.000Z",
+            "id": "4dccd447-971d-47dc-ab54-dd8cb0c8b7a4",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.626Z",
+            "updatedAt": "2026-10-14T15:02:39.626Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-09T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "7cd2edfa-1f10-46cc-8057-9ec351d8bdb3",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.625Z",
+            "updatedAt": "2026-10-14T15:02:39.625Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-08T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "db68b31b-65cb-4533-93e7-695d5ff92fee",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.624Z",
+            "updatedAt": "2026-10-14T15:02:39.624Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 126,
+            "secondary": 78,
+            "unit": "mmHg",
+            "takenAt": "2026-10-08T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "96bb1196-03a6-4796-8b54-350d018c10d5",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.623Z",
+            "updatedAt": "2026-10-14T15:02:39.623Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 129,
+            "secondary": 79,
+            "unit": "mmHg",
+            "takenAt": "2026-10-07T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "9b0595d4-8c8a-4be8-874e-2c0f1624841c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.622Z",
+            "updatedAt": "2026-10-14T15:02:39.622Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.7,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-06T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "ae81325e-68f4-46a5-af05-9a2e37ebd7fe",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.621Z",
+            "updatedAt": "2026-10-14T15:02:39.621Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 80,
+            "unit": "mmHg",
+            "takenAt": "2026-10-06T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "85575380-b3c0-4fc3-9d19-8df7b5a602bd",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.620Z",
+            "updatedAt": "2026-10-14T15:02:39.620Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.5,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-04T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "dc670841-8454-4d08-ad98-7e109b18e7d9",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.619Z",
+            "updatedAt": "2026-10-14T15:02:39.619Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 81,
+            "unit": "mmHg",
+            "takenAt": "2026-10-05T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "4eca7b16-555e-4c4c-85f4-a61a5b791c7d",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.619Z",
+            "updatedAt": "2026-10-14T15:02:39.619Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 126,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-04T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "8f6887c6-cb90-4f58-a544-668bfc1a3c09",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.618Z",
+            "updatedAt": "2026-10-14T15:02:39.618Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 129,
+            "secondary": 78,
+            "unit": "mmHg",
+            "takenAt": "2026-10-03T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "9178c6a1-1ee7-4dd3-ad42-a61d149d5eb2",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.617Z",
+            "updatedAt": "2026-10-14T15:02:39.617Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-02T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "c5e7ec02-11de-4031-9714-9522b58f1bc1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.616Z",
+            "updatedAt": "2026-10-14T15:02:39.616Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 79,
+            "unit": "mmHg",
+            "takenAt": "2026-10-02T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "b5f7726a-a34f-4c44-855c-ab816151606c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.615Z",
+            "updatedAt": "2026-10-14T15:02:39.615Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 80,
+            "unit": "mmHg",
+            "takenAt": "2026-10-01T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "13a237c7-985b-40fb-aee0-0922380df4da",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.614Z",
+            "updatedAt": "2026-10-14T15:02:39.614Z"
+          }
+        ],
+        "consults": [
+          {
+            "reason": "Routine blood pressure review",
+            "mode": "virtual",
+            "status": "completed",
+            "scheduledAt": "2026-10-07T08:15:00.000Z",
+            "doctorId": "user-doctor",
+            "doctorName": "Dr Priya Naicker",
+            "note": "Fictional demonstration note. Readings reviewed and follow-up arranged.",
+            "signedAt": "2026-10-07T09:15:00.000Z",
+            "id": "c19eb5f4-c0c9-402d-bd01-0b8321266bc1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.638Z",
+            "updatedAt": "2026-10-14T15:02:39.638Z"
+          },
+          {
+            "reason": "Monthly wellness check-in",
+            "mode": "virtual",
+            "urgency": "routine",
+            "status": "scheduled",
+            "scheduledAt": "2026-10-15T08:30:00.000Z",
+            "doctorId": "user-doctor",
+            "doctorName": "Dr Priya Naicker",
+            "note": "",
+            "signedAt": null,
+            "id": "consult-demo",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.637Z",
+            "updatedAt": "2026-10-14T15:02:39.637Z"
+          }
+        ],
+        "orders": [
+          {
+            "status": "ready",
+            "pharmacy": "Coastline Pharmacy (demo)",
+            "scriptId": null,
+            "description": "Monthly prescription",
+            "items": [
+              {
+                "drug": "Amlodipine",
+                "strength": "5 mg",
+                "quantity": 30,
+                "directions": "As prescribed on dispensing label",
+                "scheduleClass": 0,
+                "coldChain": false
+              }
+            ],
+            "events": [
+              {
+                "status": "sent",
+                "at": "2026-10-13T06:15:00.000Z"
+              },
+              {
+                "status": "dispensing",
+                "at": "2026-10-14T07:15:00.000Z"
+              },
+              {
+                "status": "ready",
+                "at": "2026-10-14T08:15:00.000Z"
+              }
+            ],
+            "driverId": "user-driver",
+            "eta": "Awaiting collection",
+            "address": "12 Example Lane, Morningside, Durban",
+            "id": "order-demo",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.641Z",
+            "updatedAt": "2026-10-14T15:02:39.641Z"
+          }
+        ],
+        "documents": [],
+        "missed": []
+      },
+      "portal": {
+        "member": {
+          "userId": "user-member",
+          "name": "Nomsa Dlamini",
+          "preferredName": "Nomsa",
+          "dateOfBirth": "1959-04-12",
+          "phone": "+27000000000",
+          "email": "nomsa@example.test",
+          "tier": "monitor",
+          "status": "active",
+          "address": "12 Example Lane, Morningside, Durban",
+          "geo": {
+            "lat": -29.826,
+            "lng": 31.016
+          },
+          "medicalAidScheme": "Example Medical Aid",
+          "medicalAidNumber": "DEMO-0001",
+          "nextOfKin": {
+            "name": "Lindiwe Dlamini",
+            "phone": "+27000000000"
+          },
+          "doctor": {
+            "name": "Dr Priya Naicker",
+            "phone": "+27000000000"
+          },
+          "coordinator": "Sister Thandi Mkhize",
+          "conditions": [
+            "Hypertension"
+          ],
+          "allergies": [
+            "Penicillin"
+          ],
+          "demo": true,
+          "id": "member-demo",
+          "memberId": null,
+          "createdAt": "2026-10-14T15:02:39.607Z",
+          "updatedAt": "2026-10-14T15:02:39.607Z"
+        },
+        "subscription": {
+          "tier": "monitor",
+          "amount": 170000,
+          "billingDay": 1,
+          "paymentMethod": "card",
+          "status": "active",
+          "startedAt": "2026-08-30T06:15:00.000Z",
+          "nextBillingAt": "2026-10-31T22:00:00.000Z",
+          "test": true,
+          "id": "subscription-demo",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.612Z",
+          "updatedAt": "2026-10-14T15:02:39.612Z"
+        },
+        "invoices": [
+          {
+            "type": "retainer",
+            "reference": "PW-DEMO-001",
+            "amount": 170000,
+            "status": "paid",
+            "dueAt": "2026-10-01T06:15:00.000Z",
+            "paidAt": "2026-10-01T06:15:00.000Z",
+            "description": "Monitor membership • example invoice",
+            "test": true,
+            "id": "d185827c-51e8-4d72-9ea1-c1b8571c2cc1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.613Z",
+            "updatedAt": "2026-10-14T15:02:39.613Z"
+          }
+        ],
+        "consents": [
+          {
+            "type": "delivery",
+            "version": "2026-10-v1",
+            "grantedAt": "2026-08-30T06:15:00.000Z",
+            "revokedAt": null,
+            "id": "4d67bafe-a6eb-4a93-826a-739e127a4576",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.610Z",
+            "updatedAt": "2026-10-14T15:02:39.610Z"
+          },
+          {
+            "type": "communications",
+            "version": "2026-10-v1",
+            "grantedAt": "2026-08-30T06:15:00.000Z",
+            "revokedAt": null,
+            "id": "f921c8ea-d3a8-4959-aa42-fbb8ef6f26e1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.609Z",
+            "updatedAt": "2026-10-14T15:02:39.609Z"
+          },
+          {
+            "type": "care",
+            "version": "2026-10-v1",
+            "grantedAt": "2026-08-30T06:15:00.000Z",
+            "revokedAt": null,
+            "id": "2dc38574-f4ae-4a3e-9054-ee52c17aaeaa",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.608Z",
+            "updatedAt": "2026-10-14T15:02:39.608Z"
+          }
+        ],
+        "family": [
+          {
+            "userId": "user-family",
+            "name": "Lindiwe Dlamini",
+            "email": "family@example.test",
+            "scope": "summary_updates",
+            "consultNotes": false,
+            "emergency": true,
+            "grantedAt": "2026-09-14T06:15:00.000Z",
+            "revokedAt": null,
+            "id": "cc40ce6a-1349-44d0-a9c8-8339fe0e2192",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.611Z",
+            "updatedAt": "2026-10-14T15:02:39.611Z"
+          }
+        ],
+        "benefits": [
+          {
+            "category": "Dental",
+            "annualLimit": 200000,
+            "used": 0,
+            "nextScheduledAt": null,
+            "source": "Example benefit — verify with scheme",
+            "id": "a8fe92a9-bdee-4fab-b837-944b393c476f",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.644Z",
+            "updatedAt": "2026-10-14T15:02:39.644Z"
+          }
+        ],
+        "vitals": [
+          {
+            "type": "heart_rate",
+            "value": 72,
+            "unit": "bpm",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "a9addd99-32a3-4194-b080-1c0e0ef819d1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "20fe70d4-585b-42b1-8a49-253fee0309b8",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "442fb377-6eea-4df3-98d1-99e93f142036",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.632Z",
+            "updatedAt": "2026-10-14T15:02:39.632Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 78,
+            "unit": "mmHg",
+            "takenAt": "2026-10-13T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "72b3a58d-b089-4aaa-95bc-0c90777911b3",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.631Z",
+            "updatedAt": "2026-10-14T15:02:39.631Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.7,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-12T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "0b518d6f-b8e2-4087-b91d-90696e8cb99c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.630Z",
+            "updatedAt": "2026-10-14T15:02:39.630Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 126,
+            "secondary": 79,
+            "unit": "mmHg",
+            "takenAt": "2026-10-12T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "bc0e140c-a14f-420d-8829-fb6dc74743ab",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.629Z",
+            "updatedAt": "2026-10-14T15:02:39.629Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 129,
+            "secondary": 80,
+            "unit": "mmHg",
+            "takenAt": "2026-10-11T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "46f6284c-09b7-4911-ab70-b51fcab800d9",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.628Z",
+            "updatedAt": "2026-10-14T15:02:39.628Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.5,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-10T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "f3c9c79b-14f2-47ba-83a4-15f361ed018b",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.627Z",
+            "updatedAt": "2026-10-14T15:02:39.627Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 81,
+            "unit": "mmHg",
+            "takenAt": "2026-10-10T06:15:00.000Z",
+            "source": "manual",
+            "flagged": true,
+            "reviewedAt": "2026-10-11T06:15:00.000Z",
+            "id": "4dccd447-971d-47dc-ab54-dd8cb0c8b7a4",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.626Z",
+            "updatedAt": "2026-10-14T15:02:39.626Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-09T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "7cd2edfa-1f10-46cc-8057-9ec351d8bdb3",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.625Z",
+            "updatedAt": "2026-10-14T15:02:39.625Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-08T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "db68b31b-65cb-4533-93e7-695d5ff92fee",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.624Z",
+            "updatedAt": "2026-10-14T15:02:39.624Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 126,
+            "secondary": 78,
+            "unit": "mmHg",
+            "takenAt": "2026-10-08T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "96bb1196-03a6-4796-8b54-350d018c10d5",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.623Z",
+            "updatedAt": "2026-10-14T15:02:39.623Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 129,
+            "secondary": 79,
+            "unit": "mmHg",
+            "takenAt": "2026-10-07T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "9b0595d4-8c8a-4be8-874e-2c0f1624841c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.622Z",
+            "updatedAt": "2026-10-14T15:02:39.622Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.7,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-06T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "ae81325e-68f4-46a5-af05-9a2e37ebd7fe",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.621Z",
+            "updatedAt": "2026-10-14T15:02:39.621Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 80,
+            "unit": "mmHg",
+            "takenAt": "2026-10-06T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "85575380-b3c0-4fc3-9d19-8df7b5a602bd",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.620Z",
+            "updatedAt": "2026-10-14T15:02:39.620Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 81,
+            "unit": "mmHg",
+            "takenAt": "2026-10-05T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "4eca7b16-555e-4c4c-85f4-a61a5b791c7d",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.619Z",
+            "updatedAt": "2026-10-14T15:02:39.619Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.5,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-04T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "dc670841-8454-4d08-ad98-7e109b18e7d9",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.619Z",
+            "updatedAt": "2026-10-14T15:02:39.619Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 126,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-04T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "8f6887c6-cb90-4f58-a544-668bfc1a3c09",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.618Z",
+            "updatedAt": "2026-10-14T15:02:39.618Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 129,
+            "secondary": 78,
+            "unit": "mmHg",
+            "takenAt": "2026-10-03T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "9178c6a1-1ee7-4dd3-ad42-a61d149d5eb2",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.617Z",
+            "updatedAt": "2026-10-14T15:02:39.617Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-02T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "c5e7ec02-11de-4031-9714-9522b58f1bc1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.616Z",
+            "updatedAt": "2026-10-14T15:02:39.616Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 79,
+            "unit": "mmHg",
+            "takenAt": "2026-10-02T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "b5f7726a-a34f-4c44-855c-ab816151606c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.615Z",
+            "updatedAt": "2026-10-14T15:02:39.615Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 123,
+            "secondary": 80,
+            "unit": "mmHg",
+            "takenAt": "2026-10-01T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "13a237c7-985b-40fb-aee0-0922380df4da",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.614Z",
+            "updatedAt": "2026-10-14T15:02:39.614Z"
+          }
+        ],
+        "medications": [
+          {
+            "drug": "Amlodipine",
+            "strength": "5 mg",
+            "directions": "As prescribed on your dispensing label",
+            "quantity": 30,
+            "prescriber": "Dr Priya Naicker",
+            "pharmacy": "Coastline Pharmacy (demo)",
+            "dispensedAt": "2026-09-23T06:15:00.000Z",
+            "status": "current",
+            "source": "Demo record",
+            "id": "5a22ecd7-d612-410c-ac08-c0265e04780c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.639Z",
+            "updatedAt": "2026-10-14T15:02:39.639Z"
+          }
+        ],
+        "consults": [
+          {
+            "reason": "Routine blood pressure review",
+            "mode": "virtual",
+            "status": "completed",
+            "scheduledAt": "2026-10-07T08:15:00.000Z",
+            "doctorId": "user-doctor",
+            "doctorName": "Dr Priya Naicker",
+            "note": "Fictional demonstration note. Readings reviewed and follow-up arranged.",
+            "signedAt": "2026-10-07T09:15:00.000Z",
+            "id": "c19eb5f4-c0c9-402d-bd01-0b8321266bc1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.638Z",
+            "updatedAt": "2026-10-14T15:02:39.638Z"
+          },
+          {
+            "reason": "Monthly wellness check-in",
+            "mode": "virtual",
+            "urgency": "routine",
+            "status": "scheduled",
+            "scheduledAt": "2026-10-15T08:30:00.000Z",
+            "doctorId": "user-doctor",
+            "doctorName": "Dr Priya Naicker",
+            "note": "",
+            "signedAt": null,
+            "id": "consult-demo",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.637Z",
+            "updatedAt": "2026-10-14T15:02:39.637Z"
+          }
+        ],
+        "orders": [
+          {
+            "status": "ready",
+            "pharmacy": "Coastline Pharmacy (demo)",
+            "scriptId": null,
+            "description": "Monthly prescription",
+            "items": [
+              {
+                "drug": "Amlodipine",
+                "strength": "5 mg",
+                "quantity": 30,
+                "directions": "As prescribed on dispensing label",
+                "scheduleClass": 0,
+                "coldChain": false
+              }
+            ],
+            "events": [
+              {
+                "status": "sent",
+                "at": "2026-10-13T06:15:00.000Z"
+              },
+              {
+                "status": "dispensing",
+                "at": "2026-10-14T07:15:00.000Z"
+              },
+              {
+                "status": "ready",
+                "at": "2026-10-14T08:15:00.000Z"
+              }
+            ],
+            "driverId": "user-driver",
+            "eta": "Awaiting collection",
+            "address": "12 Example Lane, Morningside, Durban",
+            "id": "order-demo",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.641Z",
+            "updatedAt": "2026-10-14T15:02:39.641Z"
+          }
+        ],
+        "reminders": [
+          {
+            "type": "medication",
+            "title": "Check your prescribed medication",
+            "time": "08:30",
+            "enabled": true,
+            "acknowledgedAt": null,
+            "id": "d07a52e8-5745-4ed6-8c7f-529cd2b3640a",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.643Z",
+            "updatedAt": "2026-10-14T15:02:39.643Z"
+          },
+          {
+            "type": "reading",
+            "title": "Your morning blood pressure",
+            "time": "08:00",
+            "enabled": true,
+            "acknowledgedAt": null,
+            "id": "3eb1ed26-5cee-4560-abbc-558f4418d24b",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.642Z",
+            "updatedAt": "2026-10-14T15:02:39.642Z"
+          }
+        ],
+        "nurseNotes": [],
+        "thresholds": [
+          {
+            "type": "glucose",
+            "low": 4,
+            "high": 7.8,
+            "setBy": "user-doctor",
+            "demoProtocol": true,
+            "id": "13066ff7-9a98-489b-9225-cd43f3be0cfd",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.636Z",
+            "updatedAt": "2026-10-14T15:02:39.636Z"
+          },
+          {
+            "type": "blood_pressure",
+            "low": 90,
+            "high": 140,
+            "secondaryHigh": 90,
+            "setBy": "user-doctor",
+            "demoProtocol": true,
+            "id": "b8818f96-c1c4-44ca-abd1-becc919b25b4",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.635Z",
+            "updatedAt": "2026-10-14T15:02:39.635Z"
+          }
+        ],
+        "documents": [
+          {
+            "type": "pathology",
+            "name": "Routine blood results.pdf",
+            "documentDate": "2026-10-07",
+            "tags": [
+              "Routine check"
+            ],
+            "status": "verified",
+            "verifiedBy": "user-nurse",
+            "verifiedAt": "2026-10-08T06:15:00.000Z",
+            "extractedText": "Fictional example document. No clinical result is contained in this demo.",
+            "hasFile": false,
+            "id": "62866e24-ab8b-4343-879a-3c3cd94552ea",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.640Z",
+            "updatedAt": "2026-10-14T15:02:39.640Z"
+          }
+        ]
+      },
+      "emergency": {
+        "id": "member-demo",
+        "name": "Nomsa Dlamini",
+        "conditions": [
+          "Hypertension"
+        ],
+        "allergies": [
+          "Penicillin"
+        ],
+        "doctor": {
+          "name": "Dr Priya Naicker",
+          "phone": "+27000000000"
+        },
+        "nextOfKin": {
+          "name": "Lindiwe Dlamini",
+          "phone": "+27000000000"
+        },
+        "medicalAidScheme": "Example Medical Aid",
+        "medicalAidNumber": "DEMO-0001",
+        "medications": [
+          {
+            "drug": "Amlodipine",
+            "strength": "5 mg",
+            "directions": "As prescribed on your dispensing label",
+            "quantity": 30,
+            "prescriber": "Dr Priya Naicker",
+            "pharmacy": "Coastline Pharmacy (demo)",
+            "dispensedAt": "2026-09-23T06:15:00.000Z",
+            "status": "current",
+            "source": "Demo record",
+            "id": "5a22ecd7-d612-410c-ac08-c0265e04780c",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.639Z",
+            "updatedAt": "2026-10-14T15:02:39.639Z"
+          }
+        ],
+        "vitals": [
+          {
+            "type": "heart_rate",
+            "value": 72,
+            "unit": "bpm",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "a9addd99-32a3-4194-b080-1c0e0ef819d1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "glucose",
+            "value": 5.3,
+            "unit": "mmol/L",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "id": "20fe70d4-585b-42b1-8a49-253fee0309b8",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.633Z",
+            "updatedAt": "2026-10-14T15:02:39.633Z"
+          },
+          {
+            "type": "blood_pressure",
+            "value": 120,
+            "secondary": 77,
+            "unit": "mmHg",
+            "takenAt": "2026-10-14T06:15:00.000Z",
+            "source": "manual",
+            "flagged": false,
+            "reviewedAt": null,
+            "id": "442fb377-6eea-4df3-98d1-99e93f142036",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.632Z",
+            "updatedAt": "2026-10-14T15:02:39.632Z"
+          }
+        ],
+        "generatedAt": "2026-10-14T15:02:39.980Z"
+      }
+    },
+    "admin": {
+      "user": {
+        "id": "user-admin",
+        "name": "Care coordinator",
+        "role": "admin",
+        "email": "admin@example.test"
+      },
+      "staff": {
+        "members": [
+          {
+            "id": "member-demo",
+            "name": "Nomsa Dlamini",
+            "tier": "monitor",
+            "status": "active",
+            "coordinator": "Sister Thandi Mkhize",
+            "email": "nomsa@example.test"
+          }
+        ],
+        "clinics": [
+          {
+            "villageId": "village-demo",
+            "date": "2026-10-15T08:30:00.000Z",
+            "doctorId": "user-doctor",
+            "nurseId": "user-nurse",
+            "attendees": [],
+            "id": "2a4356f4-30a1-4415-b698-b5455a49226a",
+            "memberId": null,
+            "createdAt": "2026-10-14T15:02:39.645Z",
+            "updatedAt": "2026-10-14T15:02:39.645Z"
+          }
+        ],
+        "villages": [
+          {
+            "name": "Oceanview Village (demo)",
+            "operator": "Example operator",
+            "address": "Durban North",
+            "residentCount": 0,
+            "clinicDay": "Thursday",
+            "contractAmount": 0,
+            "id": "village-demo",
+            "memberId": null,
+            "createdAt": "2026-10-14T15:02:39.644Z",
+            "updatedAt": "2026-10-14T15:02:39.644Z"
+          }
+        ],
+        "invoices": [
+          {
+            "type": "retainer",
+            "reference": "PW-DEMO-001",
+            "amount": 170000,
+            "status": "paid",
+            "dueAt": "2026-10-01T06:15:00.000Z",
+            "paidAt": "2026-10-01T06:15:00.000Z",
+            "description": "Monitor membership • example invoice",
+            "test": true,
+            "id": "d185827c-51e8-4d72-9ea1-c1b8571c2cc1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.613Z",
+            "updatedAt": "2026-10-14T15:02:39.613Z"
+          }
+        ],
+        "subscriptions": [
+          {
+            "tier": "monitor",
+            "amount": 170000,
+            "billingDay": 1,
+            "paymentMethod": "card",
+            "status": "active",
+            "startedAt": "2026-08-30T06:15:00.000Z",
+            "nextBillingAt": "2026-10-31T22:00:00.000Z",
+            "test": true,
+            "id": "subscription-demo",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.612Z",
+            "updatedAt": "2026-10-14T15:02:39.612Z"
+          }
+        ],
+        "privacyRequests": [],
+        "audit": [
+          {
+            "actorId": "user-admin",
+            "action": "view",
+            "entity": "staff_dashboard",
+            "entityId": "overview",
+            "at": "2026-10-14T15:02:39.985Z",
+            "ip": "127.0.0.1",
+            "id": "2731ef7f-cebc-4f94-aba6-c99753c9f27f",
+            "memberId": null,
+            "createdAt": "2026-10-14T15:02:39.985Z",
+            "updatedAt": "2026-10-14T15:02:39.985Z"
+          },
+          {
+            "actorId": "user-admin",
+            "action": "demo_sign_in",
+            "entity": "users",
+            "entityId": "user-admin",
+            "at": "2026-10-14T15:02:39.982Z",
+            "ip": "127.0.0.1",
+            "id": "0cb1f7ae-fecf-448c-8aa4-5a9abd964f5d",
+            "memberId": null,
+            "createdAt": "2026-10-14T15:02:39.982Z",
+            "updatedAt": "2026-10-14T15:02:39.982Z"
+          },
+          {
+            "actorId": "user-nurse",
+            "action": "view",
+            "entity": "emergency_summary",
+            "entityId": "member-demo",
+            "at": "2026-10-14T15:02:39.977Z",
+            "ip": "127.0.0.1",
+            "id": "bb581461-ab24-4235-a94e-4a6612d32a24",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.977Z",
+            "updatedAt": "2026-10-14T15:02:39.977Z"
+          },
+          {
+            "actorId": "user-nurse",
+            "action": "view",
+            "entity": "member_portal",
+            "entityId": "member-demo",
+            "at": "2026-10-14T15:02:39.973Z",
+            "ip": "127.0.0.1",
+            "id": "b226f0c2-1ee2-4e27-aa04-84d487506c24",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.973Z",
+            "updatedAt": "2026-10-14T15:02:39.973Z"
+          },
+          {
+            "actorId": "user-nurse",
+            "action": "view",
+            "entity": "staff_dashboard",
+            "entityId": "overview",
+            "at": "2026-10-14T15:02:39.969Z",
+            "ip": "127.0.0.1",
+            "id": "d6d0b143-3795-40ac-bdb0-16d9ee81adb9",
+            "memberId": null,
+            "createdAt": "2026-10-14T15:02:39.969Z",
+            "updatedAt": "2026-10-14T15:02:39.969Z"
+          },
+          {
+            "actorId": "user-nurse",
+            "action": "demo_sign_in",
+            "entity": "users",
+            "entityId": "user-nurse",
+            "at": "2026-10-14T15:02:39.966Z",
+            "ip": "127.0.0.1",
+            "id": "075ff230-7b1b-4c1c-9b5e-d06b9106cac5",
+            "memberId": null,
+            "createdAt": "2026-10-14T15:02:39.966Z",
+            "updatedAt": "2026-10-14T15:02:39.966Z"
+          },
+          {
+            "actorId": "user-doctor",
+            "action": "view",
+            "entity": "emergency_summary",
+            "entityId": "member-demo",
+            "at": "2026-10-14T15:02:39.963Z",
+            "ip": "127.0.0.1",
+            "id": "701a71ca-2c94-4f9b-a449-f683b73e45d2",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.963Z",
+            "updatedAt": "2026-10-14T15:02:39.963Z"
+          },
+          {
+            "actorId": "user-doctor",
+            "action": "view",
+            "entity": "member_portal",
+            "entityId": "member-demo",
+            "at": "2026-10-14T15:02:39.958Z",
+            "ip": "127.0.0.1",
+            "id": "bc21ab0f-c73d-43ee-aad4-a74b224f0d53",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.958Z",
+            "updatedAt": "2026-10-14T15:02:39.958Z"
+          },
+          {
+            "actorId": "user-doctor",
+            "action": "view",
+            "entity": "staff_dashboard",
+            "entityId": "overview",
+            "at": "2026-10-14T15:02:39.955Z",
+            "ip": "127.0.0.1",
+            "id": "3b61f73b-503b-48ee-afb6-97dbb54492cb",
+            "memberId": null,
+            "createdAt": "2026-10-14T15:02:39.955Z",
+            "updatedAt": "2026-10-14T15:02:39.955Z"
+          },
+          {
+            "actorId": "user-doctor",
+            "action": "demo_sign_in",
+            "entity": "users",
+            "entityId": "user-doctor",
+            "at": "2026-10-14T15:02:39.952Z",
+            "ip": "127.0.0.1",
+            "id": "8514f741-84f3-4767-8553-246d5374386f",
+            "memberId": null,
+            "createdAt": "2026-10-14T15:02:39.952Z",
+            "updatedAt": "2026-10-14T15:02:39.952Z"
+          },
+          {
+            "actorId": "user-family",
+            "action": "view",
+            "entity": "emergency_summary",
+            "entityId": "member-demo",
+            "at": "2026-10-14T15:02:39.949Z",
+            "ip": "127.0.0.1",
+            "id": "2f321e1e-c548-4734-a251-c03efc6a707a",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.949Z",
+            "updatedAt": "2026-10-14T15:02:39.949Z"
+          },
+          {
+            "actorId": "user-family",
+            "action": "view",
+            "entity": "member_portal",
+            "entityId": "member-demo",
+            "at": "2026-10-14T15:02:39.946Z",
+            "ip": "127.0.0.1",
+            "id": "2c65de10-2e5f-487a-9a21-1d1952a67ba1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.946Z",
+            "updatedAt": "2026-10-14T15:02:39.946Z"
+          },
+          {
+            "actorId": "user-family",
+            "action": "demo_sign_in",
+            "entity": "users",
+            "entityId": "user-family",
+            "at": "2026-10-14T15:02:39.944Z",
+            "ip": "127.0.0.1",
+            "id": "c1a7acc5-b904-4dfc-99b2-353b7d664d2c",
+            "memberId": null,
+            "createdAt": "2026-10-14T15:02:39.944Z",
+            "updatedAt": "2026-10-14T15:02:39.944Z"
+          },
+          {
+            "actorId": "user-member",
+            "action": "view",
+            "entity": "audit_log",
+            "entityId": "member-demo",
+            "at": "2026-10-14T15:02:39.940Z",
+            "ip": "127.0.0.1",
+            "id": "06ecee6e-b612-4bc7-915e-73e6beff0086",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.940Z",
+            "updatedAt": "2026-10-14T15:02:39.940Z"
+          },
+          {
+            "actorId": "user-member",
+            "action": "view",
+            "entity": "emergency_summary",
+            "entityId": "member-demo",
+            "at": "2026-10-14T15:02:39.926Z",
+            "ip": "127.0.0.1",
+            "id": "98df3d53-1c48-48dc-a06b-c09f84294a5e",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.926Z",
+            "updatedAt": "2026-10-14T15:02:39.926Z"
+          },
+          {
+            "actorId": "user-member",
+            "action": "view",
+            "entity": "member_portal",
+            "entityId": "member-demo",
+            "at": "2026-10-14T15:02:39.921Z",
+            "ip": "127.0.0.1",
+            "id": "290925da-59af-45dd-a96a-fcb582cf0214",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.921Z",
+            "updatedAt": "2026-10-14T15:02:39.921Z"
+          },
+          {
+            "actorId": "user-member",
+            "action": "demo_sign_in",
+            "entity": "users",
+            "entityId": "user-member",
+            "at": "2026-10-14T15:02:39.917Z",
+            "ip": "127.0.0.1",
+            "id": "35c15c95-3880-4c33-83f8-54a69e37acd3",
+            "memberId": null,
+            "createdAt": "2026-10-14T15:02:39.917Z",
+            "updatedAt": "2026-10-14T15:02:39.917Z"
+          },
+          {
+            "actorId": "system",
+            "action": "seed_demo",
+            "entity": "members",
+            "entityId": "member-demo",
+            "at": "2026-10-14T15:02:39.647Z",
+            "ip": "local",
+            "id": "7c80f012-5439-413b-ae62-f176cba2a532",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.647Z",
+            "updatedAt": "2026-10-14T15:02:39.647Z"
+          }
+        ],
+        "orders": [
+          {
+            "status": "ready",
+            "pharmacy": "Coastline Pharmacy (demo)",
+            "scriptId": null,
+            "description": "Monthly prescription",
+            "events": [
+              {
+                "status": "sent",
+                "at": "2026-10-13T06:15:00.000Z"
+              },
+              {
+                "status": "dispensing",
+                "at": "2026-10-14T07:15:00.000Z"
+              },
+              {
+                "status": "ready",
+                "at": "2026-10-14T08:15:00.000Z"
+              }
+            ],
+            "driverId": "user-driver",
+            "eta": "Awaiting collection",
+            "address": "12 Example Lane, Morningside, Durban",
+            "id": "order-demo",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.641Z",
+            "updatedAt": "2026-10-14T15:02:39.641Z"
+          }
+        ],
+        "documents": []
+      },
+      "portal": {
+        "member": {
+          "id": "member-demo",
+          "name": "Nomsa Dlamini",
+          "tier": "monitor",
+          "status": "active",
+          "email": "nomsa@example.test",
+          "phone": "+27000000000",
+          "address": "12 Example Lane, Morningside, Durban"
+        },
+        "subscription": {
+          "tier": "monitor",
+          "amount": 170000,
+          "billingDay": 1,
+          "paymentMethod": "card",
+          "status": "active",
+          "startedAt": "2026-08-30T06:15:00.000Z",
+          "nextBillingAt": "2026-10-31T22:00:00.000Z",
+          "test": true,
+          "id": "subscription-demo",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.612Z",
+          "updatedAt": "2026-10-14T15:02:39.612Z"
+        },
+        "invoices": [
+          {
+            "type": "retainer",
+            "reference": "PW-DEMO-001",
+            "amount": 170000,
+            "status": "paid",
+            "dueAt": "2026-10-01T06:15:00.000Z",
+            "paidAt": "2026-10-01T06:15:00.000Z",
+            "description": "Monitor membership • example invoice",
+            "test": true,
+            "id": "d185827c-51e8-4d72-9ea1-c1b8571c2cc1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.613Z",
+            "updatedAt": "2026-10-14T15:02:39.613Z"
+          }
+        ],
+        "consents": [
+          {
+            "type": "delivery",
+            "version": "2026-10-v1",
+            "grantedAt": "2026-08-30T06:15:00.000Z",
+            "revokedAt": null,
+            "id": "4d67bafe-a6eb-4a93-826a-739e127a4576",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.610Z",
+            "updatedAt": "2026-10-14T15:02:39.610Z"
+          },
+          {
+            "type": "communications",
+            "version": "2026-10-v1",
+            "grantedAt": "2026-08-30T06:15:00.000Z",
+            "revokedAt": null,
+            "id": "f921c8ea-d3a8-4959-aa42-fbb8ef6f26e1",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.609Z",
+            "updatedAt": "2026-10-14T15:02:39.609Z"
+          },
+          {
+            "type": "care",
+            "version": "2026-10-v1",
+            "grantedAt": "2026-08-30T06:15:00.000Z",
+            "revokedAt": null,
+            "id": "2dc38574-f4ae-4a3e-9054-ee52c17aaeaa",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.608Z",
+            "updatedAt": "2026-10-14T15:02:39.608Z"
+          }
+        ],
+        "family": [
+          {
+            "userId": "user-family",
+            "name": "Lindiwe Dlamini",
+            "email": "family@example.test",
+            "scope": "summary_updates",
+            "consultNotes": false,
+            "emergency": true,
+            "grantedAt": "2026-09-14T06:15:00.000Z",
+            "revokedAt": null,
+            "id": "cc40ce6a-1349-44d0-a9c8-8339fe0e2192",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.611Z",
+            "updatedAt": "2026-10-14T15:02:39.611Z"
+          }
+        ],
+        "benefits": [
+          {
+            "category": "Dental",
+            "annualLimit": 200000,
+            "used": 0,
+            "nextScheduledAt": null,
+            "source": "Example benefit — verify with scheme",
+            "id": "a8fe92a9-bdee-4fab-b837-944b393c476f",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.644Z",
+            "updatedAt": "2026-10-14T15:02:39.644Z"
+          }
+        ]
+      },
+      "audit": [
+        {
+          "actorId": "user-admin",
+          "action": "view",
+          "entity": "audit_log",
+          "entityId": "member-demo",
+          "at": "2026-10-14T15:02:39.992Z",
+          "ip": "127.0.0.1",
+          "id": "b63247e1-2916-49b3-83ea-a139f6924569",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.992Z",
+          "updatedAt": "2026-10-14T15:02:39.992Z"
+        },
+        {
+          "actorId": "user-admin",
+          "action": "view",
+          "entity": "member_portal",
+          "entityId": "member-demo",
+          "at": "2026-10-14T15:02:39.988Z",
+          "ip": "127.0.0.1",
+          "id": "3678ce1e-400f-4937-aca4-ca8eaa54e9ed",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.988Z",
+          "updatedAt": "2026-10-14T15:02:39.988Z"
+        },
+        {
+          "actorId": "user-nurse",
+          "action": "view",
+          "entity": "emergency_summary",
+          "entityId": "member-demo",
+          "at": "2026-10-14T15:02:39.977Z",
+          "ip": "127.0.0.1",
+          "id": "bb581461-ab24-4235-a94e-4a6612d32a24",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.977Z",
+          "updatedAt": "2026-10-14T15:02:39.977Z"
+        },
+        {
+          "actorId": "user-nurse",
+          "action": "view",
+          "entity": "member_portal",
+          "entityId": "member-demo",
+          "at": "2026-10-14T15:02:39.973Z",
+          "ip": "127.0.0.1",
+          "id": "b226f0c2-1ee2-4e27-aa04-84d487506c24",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.973Z",
+          "updatedAt": "2026-10-14T15:02:39.973Z"
+        },
+        {
+          "actorId": "user-doctor",
+          "action": "view",
+          "entity": "emergency_summary",
+          "entityId": "member-demo",
+          "at": "2026-10-14T15:02:39.963Z",
+          "ip": "127.0.0.1",
+          "id": "701a71ca-2c94-4f9b-a449-f683b73e45d2",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.963Z",
+          "updatedAt": "2026-10-14T15:02:39.963Z"
+        },
+        {
+          "actorId": "user-doctor",
+          "action": "view",
+          "entity": "member_portal",
+          "entityId": "member-demo",
+          "at": "2026-10-14T15:02:39.958Z",
+          "ip": "127.0.0.1",
+          "id": "bc21ab0f-c73d-43ee-aad4-a74b224f0d53",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.958Z",
+          "updatedAt": "2026-10-14T15:02:39.958Z"
+        },
+        {
+          "actorId": "user-family",
+          "action": "view",
+          "entity": "emergency_summary",
+          "entityId": "member-demo",
+          "at": "2026-10-14T15:02:39.949Z",
+          "ip": "127.0.0.1",
+          "id": "2f321e1e-c548-4734-a251-c03efc6a707a",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.949Z",
+          "updatedAt": "2026-10-14T15:02:39.949Z"
+        },
+        {
+          "actorId": "user-family",
+          "action": "view",
+          "entity": "member_portal",
+          "entityId": "member-demo",
+          "at": "2026-10-14T15:02:39.946Z",
+          "ip": "127.0.0.1",
+          "id": "2c65de10-2e5f-487a-9a21-1d1952a67ba1",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.946Z",
+          "updatedAt": "2026-10-14T15:02:39.946Z"
+        },
+        {
+          "actorId": "user-member",
+          "action": "view",
+          "entity": "audit_log",
+          "entityId": "member-demo",
+          "at": "2026-10-14T15:02:39.940Z",
+          "ip": "127.0.0.1",
+          "id": "06ecee6e-b612-4bc7-915e-73e6beff0086",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.940Z",
+          "updatedAt": "2026-10-14T15:02:39.940Z"
+        },
+        {
+          "actorId": "user-member",
+          "action": "view",
+          "entity": "emergency_summary",
+          "entityId": "member-demo",
+          "at": "2026-10-14T15:02:39.926Z",
+          "ip": "127.0.0.1",
+          "id": "98df3d53-1c48-48dc-a06b-c09f84294a5e",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.926Z",
+          "updatedAt": "2026-10-14T15:02:39.926Z"
+        },
+        {
+          "actorId": "user-member",
+          "action": "view",
+          "entity": "member_portal",
+          "entityId": "member-demo",
+          "at": "2026-10-14T15:02:39.921Z",
+          "ip": "127.0.0.1",
+          "id": "290925da-59af-45dd-a96a-fcb582cf0214",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.921Z",
+          "updatedAt": "2026-10-14T15:02:39.921Z"
+        },
+        {
+          "actorId": "system",
+          "action": "seed_demo",
+          "entity": "members",
+          "entityId": "member-demo",
+          "at": "2026-10-14T15:02:39.647Z",
+          "ip": "local",
+          "id": "7c80f012-5439-413b-ae62-f176cba2a532",
+          "memberId": "member-demo",
+          "createdAt": "2026-10-14T15:02:39.647Z",
+          "updatedAt": "2026-10-14T15:02:39.647Z"
+        }
+      ]
+    },
+    "pharmacy": {
+      "user": {
+        "id": "user-pharmacy",
+        "name": "Coastline Pharmacy",
+        "role": "pharmacy",
+        "email": "pharmacy@example.test"
+      },
+      "staff": {
+        "orders": [
+          {
+            "status": "ready",
+            "pharmacy": "Coastline Pharmacy (demo)",
+            "scriptId": null,
+            "description": "Monthly prescription",
+            "items": [
+              {
+                "drug": "Amlodipine",
+                "strength": "5 mg",
+                "quantity": 30,
+                "directions": "As prescribed on dispensing label",
+                "scheduleClass": 0,
+                "coldChain": false
+              }
+            ],
+            "events": [
+              {
+                "status": "sent",
+                "at": "2026-10-13T06:15:00.000Z"
+              },
+              {
+                "status": "dispensing",
+                "at": "2026-10-14T07:15:00.000Z"
+              },
+              {
+                "status": "ready",
+                "at": "2026-10-14T08:15:00.000Z"
+              }
+            ],
+            "driverId": "user-driver",
+            "eta": "Awaiting collection",
+            "address": "12 Example Lane, Morningside, Durban",
+            "id": "order-demo",
+            "memberId": "member-demo",
+            "createdAt": "2026-10-14T15:02:39.641Z",
+            "updatedAt": "2026-10-14T15:02:39.641Z",
+            "name": "Nomsa Dlamini"
+          }
+        ],
+        "scripts": []
+      }
+    },
+    "driver": {
+      "user": {
+        "id": "user-driver",
+        "name": "Sipho Mthembu",
+        "role": "driver",
+        "email": "driver@example.test"
+      },
+      "staff": {
+        "orders": [
+          {
+            "id": "order-demo",
+            "memberId": "member-demo",
+            "name": "Nomsa Dlamini",
+            "status": "ready",
+            "address": "12 Example Lane, Morningside, Durban",
+            "pharmacy": "Coastline Pharmacy (demo)",
+            "requiresId": false,
+            "requiresTemperature": false,
+            "events": [
+              {
+                "status": "sent",
+                "at": "2026-10-13T06:15:00.000Z"
+              },
+              {
+                "status": "dispensing",
+                "at": "2026-10-14T07:15:00.000Z"
+              },
+              {
+                "status": "ready",
+                "at": "2026-10-14T08:15:00.000Z"
+              }
+            ]
+          }
+        ],
+        "deliveries": []
+      }
+    }
+  }
+}
